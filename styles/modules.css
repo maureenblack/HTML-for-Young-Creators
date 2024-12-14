@@ -366,6 +366,28 @@
     margin: 2rem 0;
 }
 
+.next-lesson-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 1rem auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    width: fit-content;
+    letter-spacing: 0.5px;
+}
+
+.next-lesson-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .next-button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -957,9 +979,12 @@ pre span.emoji-indicator {
 }
 
 .error-message {
-    margin-bottom: 0.5rem;
+    margin: 1rem auto;
     font-weight: 500;
     text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 1.1rem;
 }
 
 .error-container.error .error-message {
@@ -968,6 +993,8 @@ pre span.emoji-indicator {
 
 .error-container.success .error-message {
     color: #2e7d32;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
 }
 
 .error-solution {
@@ -1105,32 +1132,107 @@ pre span.emoji-indicator {
     }
 }
 
-/* Next Lesson Button */
-.next-lesson-button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #4caf50;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
+/* Booking Form Styles */
+.booking-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.booking-form .form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form label {
+    margin-bottom: 0.5rem;
     font-weight: 500;
+    color: #333;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.booking-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.booking-form .book-button {
+    background: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
     transition: all 0.3s ease;
+    width: auto;
     margin: 1rem auto;
+    display: block;
+    position: sticky;
+    bottom: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.next-lesson-button:hover {
-    background-color: #45a049;
+.booking-form .book-button:hover {
+    background: #45a049;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.next-lesson-button::after {
-    content: " →";
-    opacity: 0.8;
-    transition: transform 0.3s ease;
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .booking-form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
 }
 
-.next-lesson-button:hover::after {
-    transform: translateX(4px);
+@media screen and (max-width: 992px) {
+    .booking-form {
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .booking-form .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .booking-form {
+        padding: 1rem;
+    }
+    
+    .booking-form .book-button {
+        width: 100%;
+        max-width: 300px;
+        position: relative;
+        bottom: auto;
+        margin: 1rem auto;
+    }
 }
