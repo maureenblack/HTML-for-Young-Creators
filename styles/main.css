@@ -5,6 +5,7 @@
     --background: #f5f5f5;
     --text: #333;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --primary-bg: white;
 }
 
 * {
@@ -19,7 +20,7 @@ body {
     color: var(--text);
     background: var(--background);
     padding: 2rem;
-    padding-top: 5rem;
+    padding-top: 70px;
 }
 
 /* Header Styles */
@@ -177,14 +178,31 @@ header h1 {
 
 /* Navigation */
 .main-nav {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--primary-bg);
+    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    background: white;
-    padding: 1rem 2rem;
-    box-shadow: var(--shadow);
+    width: 100%;
     z-index: 1000;
+}
+
+.main-nav .logo-container {
+    width: 120px;
+    margin-right: 20px;
+}
+
+.nav-logo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
@@ -262,6 +280,61 @@ footer {
     box-shadow: var(--shadow);
 }
 
+.main-footer {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #eee;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 80px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.love-message {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heart {
+    color: #ff4b4b;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.date-stamp {
+    color: #888;
+    font-size: 0.8em;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -310,6 +383,21 @@ footer {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -7px);
     }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .main-nav .logo-container {
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        margin-top: 15px;
+    }
 }
 
 /* Animations */
@@ -326,4 +414,51 @@ footer {
 
 .welcome-section, .path-item, .fun-facts {
     animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Image Placeholders for Course Sections */
+.course-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.html-basics-image {
+    background-color: #FFE5E5;
+    /* Suggested: Add a fun HTML-themed illustration here */
+}
+
+.css-magic-image {
+    background-color: #E5F6FF;
+    /* Suggested: Add a CSS styling themed illustration here */
+}
+
+.javascript-fun-image {
+    background-color: #FFF3E5;
+    /* Suggested: Add a JavaScript themed illustration here */
+}
+
+.internet-basics-image {
+    background-color: #E5FFE8;
+    /* Suggested: Add an internet/network themed illustration here */
+}
+
+/* Animated Character Container */
+.character-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    z-index: 1000;
+}
+
+.character-image {
+    width: 100%;
+    height: 100%;
+    /* Suggested: Add a friendly mascot character image here */
 }

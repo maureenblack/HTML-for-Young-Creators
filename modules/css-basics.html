@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Magic - HTML Young Innovators</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/rewards.css">
+</head>
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+    
+    <div class="container">
+        <nav class="main-nav" role="navigation">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </nav>
+
+        <main id="main" class="module-content" role="main">
+            <h1>CSS Magic: Make Your Website Beautiful! 🎨</h1>
+
+            <section class="interactive-section" data-section="css-intro">
+                <h2>Style Your Website! 🖌️</h2>
+                <div class="content-box">
+                    <div class="color-playground" role="region" aria-label="CSS Color Playground">
+                        <div class="preview-box">
+                            <div class="sample-element" id="styleTarget">
+                                <h3>Style Me!</h3>
+                                <p>Change my colors and style!</p>
+                            </div>
+                        </div>
+                        <div class="style-controls">
+                            <div class="control-group">
+                                <label for="textColor">Text Color:</label>
+                                <input type="color" id="textColor" value="#000000">
+                            </div>
+                            <div class="control-group">
+                                <label for="bgColor">Background Color:</label>
+                                <input type="color" id="bgColor" value="#ffffff">
+                            </div>
+                            <div class="control-group">
+                                <label for="fontSize">Font Size:</label>
+                                <input type="range" id="fontSize" min="12" max="48" value="16">
+                                <span class="value-display">16px</span>
+                            </div>
+                            <div class="control-group">
+                                <label for="borderRadius">Round Corners:</label>
+                                <input type="range" id="borderRadius" min="0" max="50" value="0">
+                                <span class="value-display">0px</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="challenge-section" data-section="css-challenge">
+                <h2>Style Challenge! 🏆</h2>
+                <div class="challenge-box">
+                    <div class="target-design">
+                        <h3>Make it look like this:</h3>
+                        <div class="target-example">
+                            <div class="styled-box">
+                                <h4>Cool Title</h4>
+                                <p>Awesome text!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="your-attempt">
+                        <h3>Your Version:</h3>
+                        <div class="code-playground">
+                            <div class="code-editor" contenteditable="true" aria-label="CSS Editor">
+.styled-box {
+    /* Add your CSS here! */
+}</div>
+                            <div class="preview-box">
+                                <div class="styled-box">
+                                    <h4>Cool Title</h4>
+                                    <p>Awesome text!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="check-style-button">Check My Style! ✨</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="animation-section" data-section="css-animation">
+                <h2>CSS Animation Fun! 💫</h2>
+                <div class="animation-playground">
+                    <div class="animation-controls">
+                        <button class="animation-preset" data-animation="bounce">Bounce</button>
+                        <button class="animation-preset" data-animation="spin">Spin</button>
+                        <button class="animation-preset" data-animation="shake">Shake</button>
+                        <button class="animation-preset" data-animation="pulse">Pulse</button>
+                    </div>
+                    <div class="animation-target">
+                        <div class="animated-box">
+                            <span class="emoji">🎨</span>
+                        </div>
+                    </div>
+                    <div class="animation-code">
+                        <pre><code class="animation-snippet">/* Animation will appear here */</code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="progress-tracker" role="complementary">
+            <div class="progress-item" data-section="css-intro">
+                <span>🎨</span>
+                <p>CSS Intro</p>
+            </div>
+            <div class="progress-item" data-section="css-challenge">
+                <span>🏆</span>
+                <p>Challenge</p>
+            </div>
+            <div class="progress-item" data-section="css-animation">
+                <span>💫</span>
+                <p>Animation</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/modules.js"></script>
+    <script src="../js/rewards.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Color playground functionality
+            const styleTarget = document.getElementById('styleTarget');
+            const controls = {
+                textColor: document.getElementById('textColor'),
+                bgColor: document.getElementById('bgColor'),
+                fontSize: document.getElementById('fontSize'),
+                borderRadius: document.getElementById('borderRadius')
+            };
+
+            Object.entries(controls).forEach(([property, control]) => {
+                control.addEventListener('input', (e) => {
+                    const value = e.target.value;
+                    switch(property) {
+                        case 'textColor':
+                            styleTarget.style.color = value;
+                            break;
+                        case 'bgColor':
+                            styleTarget.style.backgroundColor = value;
+                            break;
+                        case 'fontSize':
+                            styleTarget.style.fontSize = `${value}px`;
+                            control.nextElementSibling.textContent = `${value}px`;
+                            break;
+                        case 'borderRadius':
+                            styleTarget.style.borderRadius = `${value}px`;
+                            control.nextElementSibling.textContent = `${value}px`;
+                            break;
+                    }
+                    checkStyleProgress();
+                });
+            });
+
+            // Animation playground
+            const animationButtons = document.querySelectorAll('.animation-preset');
+            const animatedBox = document.querySelector('.animated-box');
+            const codeSnippet = document.querySelector('.animation-snippet');
+
+            const animations = {
+                bounce: {
+                    css: `@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}`,
+                    class: 'bounce'
+                },
+                spin: {
+                    css: `@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}`,
+                    class: 'spin'
+                },
+                shake: {
+                    css: `@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}`,
+                    class: 'shake'
+                },
+                pulse: {
+                    css: `@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}`,
+                    class: 'pulse'
+                }
+            };
+
+            animationButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const animation = animations[button.dataset.animation];
+                    animatedBox.className = 'animated-box ' + animation.class;
+                    codeSnippet.textContent = animation.css;
+                    rewardSystem.awardPoints(5);
+                });
+            });
+
+            function checkStyleProgress() {
+                const hasColor = styleTarget.style.color !== '';
+                const hasBg = styleTarget.style.backgroundColor !== '';
+                const hasSize = styleTarget.style.fontSize !== '';
+                const hasRadius = styleTarget.style.borderRadius !== '';
+
+                if (hasColor && hasBg && hasSize && hasRadius) {
+                    rewardSystem.unlockAchievement('css_master');
+                }
+            }
+
+            // Style challenge checker
+            const checkStyleButton = document.querySelector('.check-style-button');
+            if (checkStyleButton) {
+                checkStyleButton.addEventListener('click', () => {
+                    const codeEditor = document.querySelector('.code-editor');
+                    const code = codeEditor.textContent;
+                    
+                    // Simple check for required properties
+                    const hasColor = code.includes('color');
+                    const hasBackground = code.includes('background');
+                    const hasBorder = code.includes('border');
+                    
+                    if (hasColor && hasBackground && hasBorder) {
+                        rewardSystem.awardPoints(20);
+                        rewardSystem.unlockAchievement('style_master');
+                        showMessage('Amazing styling! 🎨', 'success');
+                    } else {
+                        showMessage('Keep trying! Try adding more styles! 💪', 'info');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
