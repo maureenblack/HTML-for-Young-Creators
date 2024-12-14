@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics - HTML Young Innovators</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/rewards.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </nav>
+
+        <main class="module-content">
+            <h1>HTML Basics: Building Blocks of the Web! 🏗️</h1>
+
+            <section class="interactive-section" data-section="html-intro">
+                <h2>What is HTML? 📝</h2>
+                <div class="content-box">
+                    <div class="interactive-demo">
+                        <div class="code-playground" role="region" aria-label="HTML Code Playground">
+                            <div class="code-editor" contenteditable="true" aria-label="HTML Editor">
+&lt;h1&gt;My First Webpage&lt;/h1&gt;
+&lt;p&gt;Hello, World!&lt;/p&gt;</div>
+                            <button class="run-button" aria-label="Run Code">Run Code ▶️</button>
+                        </div>
+                        <div class="preview-window" role="region" aria-label="Code Preview">
+                            <h1>My First Webpage</h1>
+                            <p>Hello, World!</p>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <p>HTML is like building with LEGO blocks! Each piece (called a "tag") has a special job:</p>
+                        <ul class="tag-list">
+                            <li>
+                                <code>&lt;h1&gt;</code> - Makes big headings
+                                <button class="try-it-button" data-tag="h1">Try it!</button>
+                            </li>
+                            <li>
+                                <code>&lt;p&gt;</code> - Creates paragraphs
+                                <button class="try-it-button" data-tag="p">Try it!</button>
+                            </li>
+                            <li>
+                                <code>&lt;img&gt;</code> - Shows pictures
+                                <button class="try-it-button" data-tag="img">Try it!</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="practice-section" data-section="html-practice">
+                <h2>Let's Practice! 🎯</h2>
+                <div class="challenge-box">
+                    <h3>Challenge 1: Create a Story</h3>
+                    <p>Can you create a short story using HTML tags? Try using:</p>
+                    <ul>
+                        <li>A heading for the title</li>
+                        <li>Paragraphs for the story</li>
+                        <li>An image for illustration</li>
+                    </ul>
+                    <div class="code-playground">
+                        <div class="code-editor" contenteditable="true" aria-label="Story Challenge Editor">
+&lt;!-- Write your story here! --&gt;
+</div>
+                        <button class="check-button">Check My Story ✨</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section" data-section="html-quiz">
+                <h2>Quick Quiz! 🤔</h2>
+                <div class="quiz-box">
+                    <div class="quiz-question">
+                        <p>Match the HTML tag with its job:</p>
+                        <div class="drag-drop-quiz">
+                            <div class="drag-items">
+                                <div class="drag-item" draggable="true" data-tag="h1">&lt;h1&gt;</div>
+                                <div class="drag-item" draggable="true" data-tag="p">&lt;p&gt;</div>
+                                <div class="drag-item" draggable="true" data-tag="img">&lt;img&gt;</div>
+                            </div>
+                            <div class="drop-zones">
+                                <div class="drop-zone" data-accepts="h1">
+                                    <p>I make big titles!</p>
+                                </div>
+                                <div class="drop-zone" data-accepts="p">
+                                    <p>I create text paragraphs!</p>
+                                </div>
+                                <div class="drop-zone" data-accepts="img">
+                                    <p>I show pictures!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="progress-tracker">
+            <div class="progress-item" data-section="html-intro">
+                <span>📝</span>
+                <p>HTML Intro</p>
+            </div>
+            <div class="progress-item" data-section="html-practice">
+                <span>🎯</span>
+                <p>Practice</p>
+            </div>
+            <div class="progress-item" data-section="html-quiz">
+                <span>🤔</span>
+                <p>Quiz</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/modules.js"></script>
+    <script src="../js/rewards.js"></script>
+    <script>
+        // Initialize interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Code playground functionality
+            const codeEditors = document.querySelectorAll('.code-editor');
+            const runButtons = document.querySelectorAll('.run-button');
+            const previewWindows = document.querySelectorAll('.preview-window');
+
+            runButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    const code = codeEditors[index].textContent;
+                    previewWindows[index].innerHTML = code;
+                    rewardSystem.awardPoints(5);
+                });
+            });
+
+            // Try-it buttons
+            const tryItButtons = document.querySelectorAll('.try-it-button');
+            tryItButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tag = button.dataset.tag;
+                    let example = '';
+                    switch(tag) {
+                        case 'h1':
+                            example = '<h1>My Amazing Title</h1>';
+                            break;
+                        case 'p':
+                            example = '<p>This is my paragraph text.</p>';
+                            break;
+                        case 'img':
+                            example = '<img src="https://picsum.photos/200" alt="Random image">';
+                            break;
+                    }
+                    codeEditors[0].textContent += '\n' + example;
+                });
+            });
+
+            // Drag and drop quiz
+            const dragItems = document.querySelectorAll('.drag-item');
+            const dropZones = document.querySelectorAll('.drop-zone');
+            
+            dragItems.forEach(item => {
+                item.addEventListener('dragstart', e => {
+                    e.dataTransfer.setData('text/plain', item.dataset.tag);
+                    item.classList.add('dragging');
+                });
+                
+                item.addEventListener('dragend', () => {
+                    item.classList.remove('dragging');
+                });
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', e => {
+                    e.preventDefault();
+                    zone.classList.add('drag-over');
+                });
+
+                zone.addEventListener('dragleave', () => {
+                    zone.classList.remove('drag-over');
+                });
+
+                zone.addEventListener('drop', e => {
+                    e.preventDefault();
+                    const draggedTag = e.dataTransfer.getData('text/plain');
+                    if (draggedTag === zone.dataset.accepts) {
+                        zone.classList.add('correct');
+                        rewardSystem.awardPoints(10);
+                        checkQuizCompletion();
+                    } else {
+                        zone.classList.add('incorrect');
+                        setTimeout(() => zone.classList.remove('incorrect'), 1000);
+                    }
+                    zone.classList.remove('drag-over');
+                });
+            });
+
+            function checkQuizCompletion() {
+                const allCorrect = Array.from(dropZones).every(zone => 
+                    zone.classList.contains('correct')
+                );
+                if (allCorrect) {
+                    rewardSystem.unlockAchievement('quiz_master');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
