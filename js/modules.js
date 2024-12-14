@@ -1,4 +1,26 @@
+// Progress tracking functionality
+const saveProgress = () => {
+    const progress = {
+        currentModule: window.location.pathname,
+        completedSections: Array.from(document.querySelectorAll('.completed')).map(el => el.dataset.section),
+        achievements: JSON.parse(localStorage.getItem('achievements') || '[]'),
+        lastVisit: new Date().toISOString()
+    };
+    localStorage.setItem('learningProgress', JSON.stringify(progress));
+};
+
+const loadProgress = () => {
+    const progress = JSON.parse(localStorage.getItem('learningProgress') || '{}');
+    if (progress.completedSections) {
+        progress.completedSections.forEach(section => {
+            const el = document.querySelector(`[data-section="${section}"]`);
+            if (el) el.classList.add('completed');
+        });
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    loadProgress();
     // Internet game functionality
     const sendButton = document.querySelector('.send-button');
     const packets = document.querySelectorAll('.data-packet');
@@ -29,29 +51,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Quiz functionality
     const quizOptions = document.querySelectorAll('.quiz-option');
-    let correctAnswers = 0;
-    let totalCorrect = document.querySelectorAll('.quiz-option.correct').length;
+    const hintButtons = document.querySelectorAll('.hint-button');
 
     quizOptions.forEach(option => {
         option.addEventListener('click', () => {
-            if (option.classList.contains('selected')) return;
-
-            option.classList.add('selected');
+            const feedback = option.parentElement.querySelector('.feedback-bubble');
+            const isCorrect = option.classList.contains('correct');
             
-            if (option.classList.contains('correct')) {
-                correctAnswers++;
-                option.style.background = 'var(--green)';
-                option.style.color = 'white';
-                
-                if (correctAnswers === totalCorrect) {
-                    showMessage('Amazing! You got them all right! 🌟', 'success');
+            // Show feedback
+            feedback.classList.remove('hidden');
+            feedback.classList.add('show');
+            
+            // Animate option
+            option.classList.add(isCorrect ? 'correct-answer' : 'wrong-answer');
+            
+            // Update progress if correct
+            if (isCorrect) {
+                const section = option.closest('[data-section]');
+                if (section) {
+                    section.classList.add('completed');
+                    saveProgress();
                     createConfetti();
                 }
-            } else {
-                option.style.background = 'var(--red)';
-                option.style.color = 'white';
-                showMessage('Not quite! Try another answer! 😊', 'error');
             }
+
+            // Hide feedback after delay
+            setTimeout(() => {
+                feedback.classList.remove('show');
+                feedback.classList.add('hidden');
+            }, 3000);
+        });
+    });
+
+    // Hint functionality
+    hintButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const hintText = button.nextElementSibling;
+            hintText.classList.toggle('hidden');
+            hintText.classList.toggle('show');
+            button.textContent = hintText.classList.contains('show') ? 'Hide Hint 🙈' : 'Need a Hint? 💡';
         });
     });
 

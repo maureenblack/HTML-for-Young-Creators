@@ -112,12 +112,30 @@
 
                     <div class="mini-quiz">
                         <h3>Quick Quiz Time! 🎯</h3>
-                        <div class="quiz-question">
+                        <div class="quiz-question" data-section="internet-basics">
                             <p>What does the Internet do? (Click all correct answers!)</p>
-                            <button class="quiz-option correct" data-answer="connect">Connects computers together</button>
-                            <button class="quiz-option correct" data-answer="send">Sends messages around the world</button>
-                            <button class="quiz-option correct" data-answer="share">Shares websites and pictures</button>
-                            <button class="quiz-option wrong" data-answer="wrong">Makes ice cream</button>
+                            <div class="quiz-option-wrapper">
+                                <button class="quiz-option correct" data-answer="connect">Connects computers together</button>
+                                <div class="feedback-bubble hidden">
+                                    <p>✅ That's right! The Internet is like a giant web connecting computers.</p>
+                                </div>
+                            </div>
+                            <div class="quiz-option-wrapper">
+                                <button class="quiz-option incorrect" data-answer="wrong">Makes computers faster</button>
+                                <div class="feedback-bubble hidden">
+                                    <p>❌ Not quite! The Internet connects computers but doesn't make them faster.</p>
+                                </div>
+                            </div>
+                            <div class="quiz-option-wrapper">
+                                <button class="quiz-option correct" data-answer="share">Helps share information</button>
+                                <div class="feedback-bubble hidden">
+                                    <p>✅ Correct! The Internet lets us share all kinds of information!</p>
+                                </div>
+                            </div>
+                            <button class="hint-button">Need a Hint? 💡</button>
+                            <div class="hint-text hidden">
+                                <p>Think about how you use the Internet every day. Do you use it to talk to friends or look up information?</p>
+                            </div>
                         </div>
                     </div>
                 </div>
