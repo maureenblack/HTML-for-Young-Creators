@@ -732,17 +732,19 @@
 
 /* Example Section */
 .example-section {
-    background: #e8f5e9;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     padding: 1.5rem;
     border-radius: 8px;
     margin: 1rem 0;
+    border: 1px solid #a5d6a7;
 }
 
 .example-section pre {
     background: white;
     padding: 1rem;
     border-radius: 6px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #a5d6a7;
+    position: relative;
 }
 
 /* Code Playground */
@@ -751,21 +753,70 @@
 }
 
 .code-editor {
-    background: #1e1e1e;
-    color: #d4d4d4;
+    background: linear-gradient(180deg, #1a237e 0%, #283593 100%);
+    color: #fff;
     padding: 1.5rem;
     border-radius: 8px;
     font-family: 'Courier New', monospace;
     min-height: 200px;
     margin-bottom: 1rem;
+    border: 1px solid #3949ab;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.code-editor pre {
+    margin: 0;
+    white-space: pre-wrap;
 }
 
 .preview-window {
-    background: white;
+    background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
     padding: 1.5rem;
     border-radius: 8px;
     min-height: 200px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Run Button with Mountain Theme */
+.run-button {
+    background: linear-gradient(135deg, #43a047 0%, #388e3c 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.run-button:hover {
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.task-list li {
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    position: relative;
+    background: #f8f9fa;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    border-left: 3px solid #4CAF50;
+}
+
+.task-list li:before {
+    content: '🎯';
+    position: absolute;
+    left: 0.8rem;
 }
 
 /* Buttons */
