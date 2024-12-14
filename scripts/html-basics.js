@@ -1,32 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Constants for examples and hints
     const htmlExamples = {
-        h1: '<h1>Mount Eloumdem</h1>\n<h2>A Natural Wonder</h2>\n<h3>Flora and Fauna</h3>',
-        p: '<p>Mount Eloumdem is a beautiful mountain located in Yaoundé, Cameroon. Its scenic trails offer breathtaking views of the surrounding landscape.</p>\n\n<p>Visitors can enjoy <strong>hiking</strong> and <em>bird watching</em> on the mountain.</p>',
-        img: '<img src="../images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="Scenic view of Mount Eloumdem" style="width: 100%; max-width: 300px;">',
-        ul: '<ul>\n    <li>Beautiful hiking trails</li>\n    <li>Diverse wildlife</li>\n    <li>Amazing viewpoints</li>\n</ul>'
+        h1: '<h1>Mount Eloumdem, Yaoundé</h1>',
+        p: '<p>Discover the breathtaking Mount Eloumdem in Yaoundé, Cameroon. This majestic mountain offers stunning views of the capital city and its surroundings.</p>',
+        img: '<img src="../images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="Beautiful view of Mount Eloumdem">',
+        list: `<ul>
+    <li>Hiking trails</li>
+    <li>Photography spots</li>
+    <li>Bird watching areas</li>
+</ul>`
     };
 
     const hints = {
-        h1: "Use h1 for the main title, h2 for sections, and h3 for subsections. Don't forget closing tags!",
-        p: "Wrap your text in <p> tags. You can use <strong> for bold and <em> for italic text.",
-        img: "Images need both src (the image file) and alt (description) attributes.",
-        ul: "List items (li) must be wrapped in a ul tag for bullet points.",
-        general: "Remember to close all your HTML tags and use proper indentation!"
+        h1: "Use <h1> tags for the main heading",
+        p: "Wrap your paragraph text in <p> tags",
+        img: 'Use <img src="../images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="description"> for the mountain image',
+        list: "Use <ul> for unordered list and <li> for list items",
+        general: "Make sure to close all your HTML tags and use proper indentation!"
     };
 
-    // Initialize all features
+    // Initialize all interactive features
     initCodeEditor();
     initTryItButtons();
     initHintSystem();
     initBookingSystem();
     initErrorHandling();
-    
-    // Make the first tag section active by default
-    const firstSection = document.querySelector('.tag-section');
-    if (firstSection) {
-        firstSection.classList.add('active');
-    }
 });
 
 function initCodeEditor() {
@@ -34,22 +32,10 @@ function initCodeEditor() {
     const runButtons = document.querySelectorAll('.run-button');
     const previewWindows = document.querySelectorAll('.preview-window');
 
-    codeEditors.forEach((editor, index) => {
-        if (!editor.textContent.trim()) {
-            editor.textContent = '<!-- Write your HTML code here -->';
-        }
-    });
-
     runButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             const code = codeEditors[index].textContent;
-            try {
-                validateHTML(code);
-                previewWindows[index].innerHTML = code;
-                showMessage('Success! Your code is working perfectly! 🎉', 'success');
-            } catch (error) {
-                showError(error.message);
-            }
+            updatePreview(code);
         });
     });
 }
@@ -62,21 +48,10 @@ function initTryItButtons() {
             const tag = button.dataset.tag;
             const example = htmlExamples[tag];
             if (example) {
-                // Find the closest code editor and preview window
-                const section = button.closest('.content-box');
-                const editor = section.querySelector('.code-editor');
-                const preview = section.querySelector('.preview-window');
-                
+                const editor = button.closest('.content-box').querySelector('.code-editor');
                 if (editor) {
                     editor.textContent = example;
-                    if (preview) {
-                        preview.innerHTML = example;
-                    }
                     showMessage('Example loaded! Try modifying it! 🚀', 'success');
-                    
-                    // Update active section
-                    document.querySelectorAll('.tag-section').forEach(s => s.classList.remove('active'));
-                    button.closest('.tag-section').classList.add('active');
                 }
             }
         });
@@ -151,17 +126,58 @@ function closeBookingModal() {
 }
 
 function validateHTML(code) {
-    // Check for missing closing tags
-    const openTags = code.match(/<\w+>/g) || [];
-    const closeTags = code.match(/<\/\w+>/g) || [];
+    // Check if user has made any changes
+    const defaultCode = code.includes('<!-- Add your content below: -->') && 
+                       !code.includes('<h1>') && 
+                       !code.includes('<p>') && 
+                       !code.includes('<ul>');
     
-    if (openTags.length > closeTags.length) {
-        throw new Error('Missing closing tag! Remember to close all your HTML tags.');
+    if (defaultCode) {
+        throw new Error('You need to add your content! Try adding a heading with <h1>, a paragraph with <p>, and a list with <ul> and <li> tags.');
+    }
+
+    // Check for required elements
+    if (!code.includes('<h1>')) {
+        throw new Error('Don\'t forget to add a heading! Use <h1> tags to create a main heading for your webpage.');
+    }
+
+    if (!code.includes('</h1>')) {
+        throw new Error('Your heading is missing a closing tag! Add </h1> to close your heading.');
+    }
+
+    if (!code.includes('<p>')) {
+        throw new Error('Add a paragraph about Mount Eloumdem! Use <p> tags to create a paragraph.');
+    }
+
+    if (!code.includes('</p>')) {
+        throw new Error('Your paragraph is missing a closing tag! Add </p> to close your paragraph.');
+    }
+
+    if (!code.includes('<ul>')) {
+        throw new Error('Create a list of activities! Use <ul> tags to start your list.');
+    }
+
+    if (!code.includes('</ul>')) {
+        throw new Error('Your list is missing a closing tag! Add </ul> to close your list.');
+    }
+
+    if (!code.includes('<li>')) {
+        throw new Error('Add some items to your list! Use <li> tags inside your <ul> to list activities.');
+    }
+
+    if (!code.includes('</li>')) {
+        throw new Error('Your list items are missing closing tags! Add </li> to close each list item.');
+    }
+
+    // Check for proper nesting
+    const listItemsOutsideList = code.includes('<li>') && !code.includes('<ul>');
+    if (listItemsOutsideList) {
+        throw new Error('List items (<li>) must be inside a list! Put them between <ul> and </ul> tags.');
     }
 
     // Check for missing quotes in attributes
     if (/<\w+\s+\w+=[^"'][^>]*>/i.test(code)) {
-        throw new Error('Attributes need quotes! Use attribute="value" format.');
+        throw new Error('Attributes need quotes! For example: src="image.jpg" instead of src=image.jpg');
     }
 
     // Check for incorrect nesting
@@ -170,45 +186,74 @@ function validateHTML(code) {
     let match;
 
     while ((match = tagPattern.exec(code)) !== null) {
+        if (match[0].includes('/>')) continue; // Skip self-closing tags
         const isClosing = match[0].startsWith('</');
         const tagName = match[1];
 
         if (!isClosing) {
-            tagStack.push(tagName);
+            if (!match[0].endsWith('/>')) { // Not a self-closing tag
+                tagStack.push(tagName);
+            }
         } else {
-            if (tagStack.pop() !== tagName) {
-                throw new Error('Tags are not properly nested! Close inner tags before outer ones.');
+            const lastTag = tagStack.pop();
+            if (lastTag !== tagName) {
+                throw new Error(`Tags are not properly nested! You closed </${tagName}> but the last opened tag was <${lastTag}>`);
             }
         }
     }
 
     if (tagStack.length > 0) {
-        throw new Error(`Unclosed tags: ${tagStack.join(', ')}`);
+        const nonSelfClosingTags = tagStack.filter(tag => tag !== 'img');
+        if (nonSelfClosingTags.length > 0) {
+            throw new Error(`Don't forget to close your tags! Missing closing tags for: ${nonSelfClosingTags.join(', ')}`);
+        }
     }
 }
 
 function showMessage(message, type = 'error') {
-    const container = document.querySelector('.error-container');
-    const messageEl = document.querySelector('.error-message');
-    const solutionEl = document.querySelector('.error-solution');
-
-    if (container && messageEl) {
-        container.style.display = 'block';
-        container.style.background = type === 'success' ? '#e8f5e9' : '#ffebee';
-        messageEl.textContent = message;
+    const errorContainer = document.querySelector('.error-container');
+    const errorMessage = document.querySelector('.error-message');
+    const errorSolution = document.querySelector('.error-solution');
+    const nextButton = document.querySelector('.next-lesson-button');
+    
+    if (errorContainer && errorMessage) {
+        errorContainer.style.display = 'block';
+        errorMessage.textContent = message;
         
-        if (solutionEl) {
-            solutionEl.style.display = type === 'success' ? 'none' : 'block';
+        // Add the appropriate class for styling
+        errorContainer.className = 'error-container ' + type;
+        
+        if (errorSolution) {
             if (type === 'error') {
-                solutionEl.textContent = 'Try checking your HTML syntax and make sure all tags are properly closed.';
+                errorSolution.style.display = 'block';
+                errorSolution.innerHTML = `
+                    <h4>💡 Need help?</h4>
+                    <p>Remember to:</p>
+                    <ul>
+                        <li>Add a heading using &lt;h1&gt; tags</li>
+                        <li>Write a paragraph using &lt;p&gt; tags</li>
+                        <li>Create a list using &lt;ul&gt; and &lt;li&gt; tags</li>
+                        <li>Close all your tags (e.g., &lt;/h1&gt;, &lt;/p&gt;, &lt;/ul&gt;)</li>
+                    </ul>`;
+                if (nextButton) nextButton.style.display = 'none';
+            } else {
+                errorSolution.style.display = 'none';
+                if (nextButton) nextButton.style.display = 'block';
             }
         }
+    }
+}
 
-        if (type === 'success') {
-            setTimeout(() => {
-                container.style.display = 'none';
-            }, 3000);
+function updatePreview(code) {
+    try {
+        validateHTML(code);
+        const previewWindow = document.querySelector('.preview-window');
+        if (previewWindow) {
+            previewWindow.innerHTML = code;
+            showMessage('Great job! 🎉 Your webpage looks amazing! Ready for the next lesson?', 'success');
         }
+    } catch (error) {
+        showMessage(error.message, 'error');
     }
 }
 

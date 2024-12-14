@@ -753,14 +753,12 @@
 }
 
 .code-editor {
-    background: linear-gradient(180deg, #1a237e 0%, #283593 100%);
-    color: #fff;
-    padding: 1.5rem;
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem;
     border-radius: 8px;
     font-family: 'Courier New', monospace;
-    min-height: 200px;
     margin-bottom: 1rem;
-    border: 1px solid #3949ab;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -940,18 +938,36 @@ pre span.emoji-indicator {
 /* Error Display */
 .error-container {
     display: none;
-    background: #ffebee;
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.error-container.error {
+    background: #ffebee;
     border-left: 4px solid #f44336;
+}
+
+.error-container.success {
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
     animation: slideIn 0.3s ease;
 }
 
 .error-message {
-    color: #d32f2f;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    text-align: center;
+}
+
+.error-container.error .error-message {
+    color: #d32f2f;
+}
+
+.error-container.success .error-message {
+    color: #2e7d32;
 }
 
 .error-solution {
@@ -959,6 +975,9 @@ pre span.emoji-indicator {
     padding: 1rem;
     border-radius: 6px;
     color: #37474f;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Booking Modal */
@@ -1084,4 +1103,34 @@ pre span.emoji-indicator {
     to {
         opacity: 1;
     }
+}
+
+/* Next Lesson Button */
+.next-lesson-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 1rem auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.next-lesson-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.next-lesson-button::after {
+    content: " →";
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.next-lesson-button:hover::after {
+    transform: translateX(4px);
 }
