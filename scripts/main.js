@@ -159,6 +159,89 @@ class DailyChallenge {
     }
 }
 
+// Navigation Controls
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const moduleItems = document.querySelectorAll('.path-item');
+let currentModuleIndex = 0;
+
+function updateNavigation() {
+    // Update button states
+    prevBtn.disabled = currentModuleIndex === 0;
+    nextBtn.disabled = currentModuleIndex === moduleItems.length - 1;
+
+    // Update active module
+    moduleItems.forEach((item, index) => {
+        if (index === currentModuleIndex) {
+            item.classList.add('active');
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+prevBtn.addEventListener('click', () => {
+    if (currentModuleIndex > 0) {
+        currentModuleIndex--;
+        updateNavigation();
+    }
+});
+
+nextBtn.addEventListener('click', () => {
+    if (currentModuleIndex < moduleItems.length - 1) {
+        currentModuleIndex++;
+        updateNavigation();
+    }
+});
+
+// Initialize navigation
+updateNavigation();
+
+// Section Navigation
+document.addEventListener('DOMContentLoaded', () => {
+    const sectionNav = document.querySelector('.section-nav');
+    const sectionLinks = sectionNav.querySelectorAll('a');
+    const sections = document.querySelectorAll('section');
+
+    // Update active section on scroll
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        sectionLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Smooth scroll to section
+    sectionLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').slice(1);
+            const targetSection = document.getElementById(targetId);
+            
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // Update active class
+            sectionLinks.forEach(link => link.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+});
+
 // Initialize everything when the page loads
 let progress, factCarousel, viewControls, dailyChallenge;
 

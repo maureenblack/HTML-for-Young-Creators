@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 :root {
     --orange: #ff6b35;
     --green: #4CAF50;
@@ -14,467 +15,38 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: var(--background);
     color: var(--text);
-    padding: 2rem;
-    padding-top: 70px;
-}
-
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-section {
-    margin-bottom: 3rem;
-}
-
-h2 {
-    color: #2d3436;
-    margin-bottom: 1.5rem;
-}
-
-/* Header Styles */
-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background: white;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-header h1 {
-    color: var(--orange);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.tagline {
-    color: var(--text);
-    font-size: 1.2rem;
-}
-
-/* Welcome Section */
-.welcome-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    margin-bottom: 3rem;
-}
-
-.welcome-section h2 {
-    color: var(--green);
-    margin-bottom: 1rem;
-}
-
-.course-overview {
-    margin-top: 2rem;
-}
-
-.learning-path {
-    list-style: none;
-    padding: 1rem;
-}
-
-.learning-path li {
-    margin: 1rem 0;
-    padding: 0.5rem;
-    background: var(--background);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.learning-path li:hover {
-    transform: translateX(10px);
-}
-
-/* Learning Path Section */
-.learning-path-section {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-}
-
-.module-path {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.path-item {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-    position: relative;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.path-item:hover {
-    transform: translateY(-5px);
-}
-
-.module-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.level {
-    background: var(--orange);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.xp-points {
-    background: #4CAF50;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.module-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-}
-
-.module-details span {
-    background: #e9ecef;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-}
-
-.module-topics {
-    display: flex;
-    gap: 0.5rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-}
-
-.topic {
-    background: #e9ecef;
-    color: #495057;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-}
-
-.start-module {
-    display: inline-block;
-    background: var(--orange);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s ease;
-    margin-top: 1rem;
-}
-
-.start-module:hover {
-    transform: scale(1.05);
-}
-
-.start-module.locked {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Progress Overview */
-.progress-overview {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow);
-}
-
-.progress-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-}
-
-.stat-label {
-    display: block;
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.stat-value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--orange);
-}
-
-.level-progress {
-    width: 100%;
-}
-
-.progress-bar {
-    height: 10px;
-    background: #e9ecef;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-}
-
-.progress-fill {
-    height: 100%;
-    background: var(--orange);
-    transition: width 0.3s ease;
-}
-
-.progress-text {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Daily Challenge */
-.daily-challenge {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    box-shadow: var(--shadow);
-}
-
-.challenge-card {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 1.5rem;
-}
-
-.challenge-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.challenge-type {
-    background: var(--orange);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-.challenge-xp {
-    background: #4CAF50;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-.start-challenge {
-    background: var(--orange);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    margin-top: 1rem;
-}
-
-.start-challenge:hover {
-    transform: scale(1.05);
-}
-
-/* Achievements Section */
-.achievements-section {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-top: 3rem;
-    box-shadow: var(--shadow);
-}
-
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.achievement-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-.achievement-card:hover {
-    transform: translateY(-5px);
-}
-
-.achievement-card.locked {
-    opacity: 0.7;
-    background: #f8f9fa;
-}
-
-.achievement-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.achievement-progress {
-    margin-top: 1rem;
-    color: var(--orange);
-    font-weight: bold;
-}
-
-/* Fun Facts Section */
-.fun-facts {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-top: 3rem;
-    box-shadow: var(--shadow);
-}
-
-.fact-carousel {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1rem;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-.fact-card {
-    flex: 0 0 300px;
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.fact-icon {
-    font-size: 2rem;
-}
-
-/* Community Section */
-.community-section {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-top: 3rem;
-    box-shadow: var(--shadow);
-}
-
-.community-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.community-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
-}
-
-.community-card:hover {
-    transform: translateY(-5px);
-}
-
-.card-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.join-btn {
-    background: var(--orange);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    margin-top: 1rem;
-}
-
-.join-btn:hover {
-    transform: scale(1.05);
+    padding-top: 60px; /* Space for fixed navbar */
 }
 
 /* Navigation */
 .main-nav {
-    display: flex;
-    align-items: center;
-    padding: 15px 30px;
-    background: var(--primary-bg);
-    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
+    right: 0;
+    background: var(--primary-bg);
+    padding: 0.5rem 2rem;
+    display: flex;
     justify-content: space-between;
-}
-
-.main-nav .logo-container {
-    width: 120px;
-    flex-shrink: 0;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
 }
 
 .nav-logo {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+    height: 40px;
 }
 
 .nav-menu {
     display: flex;
     gap: 2rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
     margin-left: auto;
 }
 
@@ -487,34 +59,252 @@ header h1 {
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 }
 
-.nav-menu a:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
+.nav-menu a:hover,
 .nav-menu a.active {
-    background: var(--orange, #ff6b6b);
+    background: var(--orange);
     color: white;
-    box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
+/* Main Layout */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    gap: 2rem;
+}
+
+section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.progress-overview {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Learning Path */
+.learning-path-section {
+    padding: 2rem;
+}
+
+.path-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.view-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.view-btn {
+    background: var(--background);
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     cursor: pointer;
-    padding: 10px;
+    transition: all 0.3s ease;
 }
 
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--text);
-    transition: all 0.3s ease;
+.view-btn.active {
+    background: var(--orange);
+    color: white;
+}
+
+.navigation-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.nav-btn {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+.nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.module-path {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.path-item {
+    background: var(--background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.path-item:hover {
+    transform: translateY(-5px);
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.module-details span {
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Achievements Section */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Fun Facts */
+.fact-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fact-card {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+/* Community Section */
+.community-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.community-card {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Buttons and Interactive Elements */
+.btn {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.main-footer {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    .progress-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .module-path {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }
 
 /* Responsive Navigation */
@@ -585,6 +375,133 @@ header h1 {
     display: flex;
 }
 
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    color: var(--orange);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    color: var(--text);
+    font-size: 1.2rem;
+}
+
+/* Daily Challenge */
+.daily-challenge {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.challenge-card {
+    background: var(--background);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.challenge-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.challenge-type {
+    background: var(--orange);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.challenge-xp {
+    background: var(--green);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.start-challenge {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.start-challenge:hover {
+    transform: scale(1.05);
+}
+
+/* Achievements Section */
+.achievements-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.fact-icon {
+    font-size: 2rem;
+}
+
+/* Community Section */
+.community-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.join-btn {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.join-btn:hover {
+    transform: scale(1.05);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -649,142 +566,86 @@ footer {
     100% { transform: scale(1); }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .module-path {
-        grid-template-columns: 1fr;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 60px;
-        left: -100%;
-        right: 0;
-        bottom: 0;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        transition: left 0.3s ease;
-        width: 70%;
-        box-shadow: var(--shadow);
-    }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    .main-nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .main-nav .logo-container {
-        width: 100px;
-        margin-right: 10px;
-    }
-
-    .nav-menu {
-        width: 100%;
-        margin-top: 15px;
-    }
+/* Remove any unwanted overlays */
+.pink-screen,
+.overlay {
+    display: none !important;
 }
 
-@media (min-width: 768px) {
-    .module-path {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.welcome-section, .path-item, .fun-facts {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Image Placeholders for Course Sections */
-.course-image {
-    width: 100%;
-    height: 200px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.html-basics-image {
-    background-color: #FFE5E5;
-    /* Suggested: Add a fun HTML-themed illustration here */
-}
-
-.css-magic-image {
-    background-color: #E5F6FF;
-    /* Suggested: Add a CSS styling themed illustration here */
-}
-
-.javascript-fun-image {
-    background-color: #FFF3E5;
-    /* Suggested: Add a JavaScript themed illustration here */
-}
-
-.internet-basics-image {
-    background-color: #E5FFE8;
-    /* Suggested: Add an internet/network themed illustration here */
-}
-
-/* Animated Character Container */
-.character-container {
+/* Section Navigation */
+.section-nav {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 1rem;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
     z-index: 1000;
 }
 
-.character-image {
-    width: 100%;
-    height: 100%;
-    /* Suggested: Add a friendly mascot character image here */
+.section-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* Remove any unwanted overlays */
-.overlay,
-.pink-screen {
-    display: none !important;
+.section-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.section-nav a:hover {
+    background: var(--orange);
+    color: white;
+}
+
+.section-nav a.active {
+    background: var(--orange);
+    color: white;
+}
+
+.section-nav .nav-label {
+    margin-left: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.section-nav:hover .nav-label {
+    opacity: 1;
+}
+
+.section-nav i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .section-nav {
+        bottom: 2rem;
+        right: 50%;
+        top: auto;
+        transform: translateX(50%);
+        flex-direction: row;
+        padding: 0.5rem;
+    }
+
+    .section-nav ul {
+        flex-direction: row;
+    }
+
+    .section-nav .nav-label {
+        display: none;
+    }
 }
