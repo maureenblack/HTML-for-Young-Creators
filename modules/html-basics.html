@@ -72,17 +72,16 @@
 &lt;/html&gt;</pre>
 
                         <h3>Text Tags: Describing Our Mountain 📝</h3>
-                        <div class="tag-section">
-                            <h4>Headings: Like Mountain Signposts</h4>
-                            <p>Just as Mount Eloumdem has different levels of paths, HTML has different levels of headings:</p>
+                        <div class="tag-section" data-tag="h1">
+                            <h4>Headings: Introducing Our Mountain</h4>
                             <pre>
-&lt;h1&gt;Mount Eloumdem&lt;/h1&gt;              👈 Main title (the mountain itself)
-&lt;h2&gt;About the Mountain&lt;/h2&gt;          👈 Major sections (like different areas)
-&lt;h3&gt;Flora and Fauna&lt;/h3&gt;            👈 Sub-sections (specific features)</pre>
+&lt;h1&gt;Mount Eloumdem&lt;/h1&gt;            👈 Main title
+&lt;h2&gt;A Natural Wonder&lt;/h2&gt;         👈 Major sections
+&lt;h3&gt;Flora and Fauna&lt;/h3&gt;            👈 Sub-sections</pre>
                             <button class="try-it-button" data-tag="h1">Try it!</button>
                         </div>
 
-                        <div class="tag-section">
+                        <div class="tag-section" data-tag="p">
                             <h4>Paragraphs: Telling the Mountain's Story</h4>
                             <pre>
 &lt;p&gt;Mount Eloumdem is a beautiful mountain located in Yaoundé, Cameroon. 
@@ -93,7 +92,7 @@ Its scenic trails offer breathtaking views of the surrounding landscape.&lt;/p&g
                             <button class="try-it-button" data-tag="p">Try it!</button>
                         </div>
 
-                        <div class="tag-section">
+                        <div class="tag-section" data-tag="ul">
                             <h4>Lists: Mountain Activities and Features</h4>
                             <p>We can list things about Mount Eloumdem in two ways:</p>
                             <pre>
@@ -101,20 +100,14 @@ Its scenic trails offer breathtaking views of the surrounding landscape.&lt;/p&g
     &lt;li&gt;Beautiful hiking trails&lt;/li&gt;
     &lt;li&gt;Diverse wildlife&lt;/li&gt;
     &lt;li&gt;Amazing viewpoints&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;                        👈 Steps to reach the summit
-    &lt;li&gt;Start at the base camp&lt;/li&gt;
-    &lt;li&gt;Follow the marked trail&lt;/li&gt;
-    &lt;li&gt;Reach the viewpoint&lt;/li&gt;
-&lt;/ol&gt;</pre>
+&lt;/ul&gt;</pre>
+                            <button class="try-it-button" data-tag="ul">Try it!</button>
                         </div>
 
-                        <div class="tag-section">
+                        <div class="tag-section" data-tag="img">
                             <h4>Images: Showing Off Our Mountain 🖼️</h4>
                             <p>Let's add some beautiful pictures of Mount Eloumdem:</p>
-                            <pre>&lt;img src="mount_eloumdem.jpg" alt="Scenic view of Mount Eloumdem at sunset"&gt;</pre>
-                            <p><strong>Tip:</strong> The alt text helps people understand what the image shows if they can't see it!</p>
+                            <pre>&lt;img src="../images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="Scenic view of Mount Eloumdem at sunset"&gt;</pre>
                             <button class="try-it-button" data-tag="img">Try it!</button>
                         </div>
 
@@ -197,7 +190,55 @@ Its scenic trails offer breathtaking views of the surrounding landscape.&lt;/p&g
         <button id="back-to-top" title="Back to Top">
             <i class="fas fa-arrow-up"></i>
         </button>
+<!-- Support Section -->
+<div class="support-section">
+    <div class="help-container">
+        <div class="hint-box">
+            <h3>Need Help?</h3>
+            <p>Click below for hints on how to write proper HTML code.</p>
+            <button class="hint-button">Show Hint</button>
+            <div class="hint-content"></div>
+        </div>
+        <div class="book-session">
+            <h3>Personal Guidance</h3>
+            <p>Book a one-on-one session with an HTML expert to master the basics.</p>
+            <button class="booking-button">Book Session</button>
+        </div>
+    </div>
+</div>
 
+<!-- Error Container -->
+<div class="error-container">
+    <div class="error-message"></div>
+    <div class="error-solution"></div>
+</div>
+
+<!-- Booking Modal -->
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Book a Session</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <input type="time" id="time" required>
+            </div>
+            <button type="submit" class="submit-booking">Book Now</button>
+        </form>
+    </div>
+</div>
         <!-- Scripts -->
         <script src="../scripts/main.js"></script>
         <script src="../scripts/html-basics.js"></script>
