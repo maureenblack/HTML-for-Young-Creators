@@ -442,22 +442,28 @@ footer {
 }
 
 .main-footer {
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
     width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.main-footer .love-message {
-    margin: 0;
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.love-message {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-}
-
-.main-footer .heart {
-    color: #ff4b4b;
+    margin: 0;
 }
 
 .footer-logo {
@@ -466,33 +472,9 @@ footer {
     vertical-align: middle;
 }
 
-.footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer-logo {
-    width: 80px;
-    height: auto;
-    vertical-align: middle;
-}
-
-.love-message {
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
 .heart {
     color: #ff4b4b;
     display: inline-block;
-    animation: heartbeat 1.5s infinite;
 }
 
 .copyright {
@@ -672,4 +654,28 @@ footer {
     .topic {
         font-size: 0.8rem;
     }
+}
+
+/* Course Image Styles */
+.course-image {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.course-image img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-image img:hover {
+    transform: scale(1.02);
+}
+
+.html-basics-image img {
+    object-fit: cover;
+    height: 300px;
 }

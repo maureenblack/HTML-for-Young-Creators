@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HTML Basics - HTML for Young Creators</title>
+        <title>HTML Basics - HTML for Young Innovators</title>
         <link rel="icon" type="image/png" href="../images/giiyotech_logo.png">
         <link rel="stylesheet" href="../styles/main.css">
         <link rel="stylesheet" href="../styles/animations.css">
@@ -16,71 +16,161 @@
             <!-- Navigation -->
             <nav class="main-nav">
                 <div class="logo-container">
-                    <img src="../images/giiyotech_logo.png" alt="GiiyoTech Logo" class="nav-logo">
+                    <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
                 </div>
                 <a href="../index.html" class="back-link">← Back to Home</a>
             </nav>
 
             <!-- Main Content -->
             <main class="module-content">
-                <h1>HTML Basics: Building Blocks of the Web! 🏗️</h1>
+                <h1>HTML Basics: Your First Step into Web Creation! 🏗️</h1>
 
                 <!-- Course Image -->
                 <div class="course-image html-basics-image">
-                    <img src="https://via.placeholder.com/300" alt="HTML Tags as Building Blocks">
+                    <img src="/images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="HTML Tags as Building Blocks">
                 </div>
 
-                <!-- Interactive Section -->
-                <section class="interactive-section">
-                    <h2>What is HTML? 📝</h2>
+                <!-- Introduction Section -->
+                <section class="content-section">
+                    <h2>Understanding HTML: The Language of the Web 📝</h2>
                     <div class="content-box">
-                        <div class="interactive-demo">
-                            <!-- Code Playground -->
-                            <div class="code-playground" role="region" aria-label="HTML Code Playground">
-                                <div class="code-editor" contenteditable="true" aria-label="HTML Editor">
-                                    <pre>&lt;h1&gt;My First Webpage&lt;/h1&gt;
-&lt;p&gt;Hello, World!&lt;/p&gt;</pre>
-                                </div>
-                                <button class="run-button" role="button">Run Code ▶️</button>
-                            </div>
-
-                            <!-- Preview Window -->
-                            <div class="preview-window" role="region" aria-label="Code Preview"></div>
-                        </div>
+                        <p>Imagine you're writing a letter. You need to know where to put the date, greeting, and your signature, right? HTML is similar - it helps us organize our web pages! Let's learn what HTML is all about:</p>
                         
-                        <!-- Explanation -->
-                        <div class="explanation">
-                            <p>HTML is like building with LEGO blocks! Each piece (called a "tag") has a special job:</p>
-                            <ul class="tag-list">
-                                <li>
-                                    <code>&lt;h1&gt;</code> - Makes big headings
-                                    <button class="try-it-button" data-tag="h1">Try it!</button>
-                                </li>
-                                <li>
-                                    <code>&lt;p&gt;</code> - Creates paragraphs
-                                    <button class="try-it-button" data-tag="p">Try it!</button>
-                                </li>
-                                <li>
-                                    <code>&lt;img&gt;</code> - Shows pictures
-                                    <button class="try-it-button" data-tag="img">Try it!</button>
-                                </li>
-                            </ul>
+                        <h3>What is HTML? 🤔</h3>
+                        <p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage. Don't worry about the big words! Here's what it means:</p>
+                        <ul>
+                            <li><strong>HyperText:</strong> Text that can link to other text (like when you click a link to go to another page)</li>
+                            <li><strong>Markup:</strong> A way to describe how we want our content to look</li>
+                            <li><strong>Language:</strong> A set of rules we follow to create web pages</li>
+                        </ul>
+
+                        <h3>Why Do We Need HTML? 🎯</h3>
+                        <p>Every website you visit - whether it's a game site, social media, or your school's website - uses HTML! It's like the skeleton of a website that:</p>
+                        <ul>
+                            <li>Tells web browsers what each piece of content is (headings, paragraphs, images)</li>
+                            <li>Creates links between different pages</li>
+                            <li>Adds images, videos, and other media to your pages</li>
+                            <li>Organizes content into sections, like header, main content, and footer</li>
+                        </ul>
+
+                        <h3>How Does HTML Work? 🔨</h3>
+                        <p>HTML uses special codes called "tags" to organize content. Think of tags like containers or labels that tell the browser what each piece of content is:</p>
+                        <div class="example-section">
+                            <p>For example, when we write:</p>
+                            <pre>&lt;h1&gt;Welcome to My Page&lt;/h1&gt;</pre>
+                            <p>The browser knows that "Welcome to My Page" is a big heading!</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Practice Section -->
-                <section class="practice-section">
-                    <h2>Let's Practice! 🎯</h2>
-                    <div class="challenge-box">
-                        <h3>Challenge: Create Your Story!</h3>
-                        <p>Use headings, paragraphs, and images to write a short story!</p>
-                        <div class="code-playground">
-                            <div class="code-editor" contenteditable="true" aria-label="Practice Editor">
-                                <pre>&lt;!-- Start your story here! --&gt;</pre>
-                            </div>
-                            <button class="check-button">Check My Story ✨</button>
+                <!-- HTML Tags Explained -->
+                <section class="content-section">
+                    <h2>HTML Tags: Your Building Blocks 🧱</h2>
+                    <div class="content-box">
+                        <h3>Basic Page Structure</h3>
+                        <p>Every HTML page needs these important parts:</p>
+                        <pre>
+&lt;!DOCTYPE html&gt;            👈 Tells browsers this is a modern HTML page
+&lt;html&gt;                    👈 The container for your whole webpage
+    &lt;head&gt;                👈 Information about your page
+        &lt;title&gt;My Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;                👈 The content people see
+        Your content goes here!
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+                        <h3>Text Tags: Making Your Content Look Good 📝</h3>
+                        <div class="tag-section">
+                            <h4>Headings:</h4>
+                            <p>HTML has six levels of headings, from biggest to smallest:</p>
+                            <pre>
+&lt;h1&gt;Main Title&lt;/h1&gt;        👈 Use this for your page title
+&lt;h2&gt;Section Title&lt;/h2&gt;     👈 For main sections
+&lt;h3&gt;Sub-section&lt;/h3&gt;       👈 For smaller sections
+(and so on to h6)</pre>
+                            <p><strong>Remember:</strong> Only use one h1 per page - it's like the title of a book!</p>
                         </div>
+
+                        <div class="tag-section">
+                            <h4>Paragraphs and Text:</h4>
+                            <pre>
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;strong&gt;This text is bold&lt;/strong&gt;
+&lt;em&gt;This text is italic&lt;/em&gt;</pre>
+                            <button class="try-it-button" data-tag="p">Try it!</button>
+                        </div>
+
+                        <div class="tag-section">
+                            <h4>Lists: Organizing Information</h4>
+                            <p>There are two types of lists:</p>
+                            <pre>
+&lt;ul&gt;                        👈 Unordered list (bullet points)
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;                        👈 Ordered list (numbers)
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                        </div>
+
+                        <div class="tag-section">
+                            <h4>Images: Adding Pictures 🖼️</h4>
+                            <p>Images need two important things: where to find the image (src) and what it shows (alt):</p>
+                            <pre>&lt;img src="picture.jpg" alt="Description of the picture"&gt;</pre>
+                            <p><strong>Note:</strong> The alt text helps people who can't see the image understand what it shows!</p>
+                            <button class="try-it-button" data-tag="img">Try it!</button>
+                        </div>
+
+                        <div class="tag-section">
+                            <h4>Links: Connecting Pages 🔗</h4>
+                            <p>Links help people navigate between pages:</p>
+                            <pre>&lt;a href="https://example.com"&gt;Click here!&lt;/a&gt;</pre>
+                            <p><strong>Tip:</strong> The href tells the browser where to go when someone clicks the link.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Common Mistakes Section -->
+                <section class="content-section">
+                    <h2>Common Mistakes to Avoid ⚠️</h2>
+                    <div class="content-box">
+                        <ul>
+                            <li><strong>Forgetting to close tags:</strong> Most tags need both an opening and closing tag</li>
+                            <li><strong>Wrong nesting:</strong> Close tags in the right order:
+                                <pre>
+✅ Correct:
+&lt;p&gt;&lt;strong&gt;Text&lt;/strong&gt;&lt;/p&gt;
+
+❌ Wrong:
+&lt;p&gt;&lt;strong&gt;Text&lt;/p&gt;&lt;/strong&gt;</pre>
+                            </li>
+                            <li><strong>Missing quotes:</strong> Always use quotes around attribute values:
+                                <pre>
+✅ Correct:
+&lt;img src="picture.jpg"&gt;
+
+❌ Wrong:
+&lt;img src=picture.jpg&gt;</pre>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Practice Section -->
+                <section class="content-section">
+                    <h2>Let's Practice! 🎯</h2>
+                    <div class="content-box">
+                        <p>Try creating a simple webpage about Mount Eloumdem using what you've learned:</p>
+                        <div class="code-playground">
+                            <div class="code-editor" contenteditable="true">
+                                <pre>&lt;!-- Start your code here! --&gt;</pre>
+                            </div>
+                            <button class="run-button">See Your Page ✨</button>
+                        </div>
+                        <div class="preview-window"></div>
                     </div>
                 </section>
             </main>
@@ -108,8 +198,12 @@
         <!-- Scripts -->
         <script src="../scripts/main.js"></script>
         <script src="../scripts/html-basics.js"></script>
+        
+        <!-- Footer -->
         <footer class="main-footer">
-            <p class="love-message">Made with <span class="heart">❤️</span> by <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo"></p>
+            <div class="footer-content">
+                <p class="love-message">Made with <span class="heart">❤️</span> by <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo"></p>
+            </div>
         </footer>
     </body>
 </html>
