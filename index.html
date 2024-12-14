@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML for Young Creators</title>
+    <link rel="icon" type="image/png" href="/images/giiyotech logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/giiyotech logo.png" sizes="16x16">
+    <meta name="theme-color" content="#4CAF50">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="main-nav">
         <div class="logo-container">
-            <img src="images/giiyo-tech-logo.png" alt="Giiyo Tech Logo" class="nav-logo">
+            <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
         </div>
         <div class="hamburger">
             <span></span>
@@ -28,6 +31,29 @@
 
     <main>
         <section class="welcome-section">
+            <div class="progress-overview">
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total XP</span>
+                        <span class="stat-value" id="totalXP">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Level</span>
+                        <span class="stat-value" id="currentLevel">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Achievements</span>
+                        <span class="stat-value" id="achievementCount">0/12</span>
+                    </div>
+                </div>
+                <div class="level-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">0/100 XP to next level</span>
+                </div>
+            </div>
+
             <h2>Welcome, Future Web Developer! 👋</h2>
             <p>Ready to create your own amazing websites? You're in the right place! 
                This course will take you from complete beginner to web creator, step by step.</p>
@@ -36,63 +62,270 @@
                 <h3>What You'll Learn 📚</h3>
                 <ul class="learning-path">
                     <li>🌐 How the Internet Works</li>
-                    <li>💻 Creating Your First Webpage</li>
-                    <li>🎨 Making Things Look Beautiful</li>
-                    <li>🎮 Adding Fun Interactions</li>
+                    <li>💻 HTML: Building Blocks of the Web</li>
+                    <li>🎨 CSS: Making Things Beautiful</li>
+                    <li>🎮 JavaScript: Adding Interactivity</li>
+                    <li>🚀 Building Real Projects</li>
+                    <li>🔧 Web Development Tools</li>
+                    <li>📱 Responsive Design</li>
+                    <li>🎨 Web Design Principles</li>
                 </ul>
+            </div>
+
+            <div class="daily-challenge">
+                <h3>Daily Challenge 🎯</h3>
+                <div class="challenge-card">
+                    <div class="challenge-header">
+                        <span class="challenge-type">HTML Challenge</span>
+                        <span class="challenge-xp">+20 XP</span>
+                    </div>
+                    <p class="challenge-description">Create a navigation menu using HTML lists</p>
+                    <button class="start-challenge">Accept Challenge</button>
+                </div>
             </div>
         </section>
 
         <section class="learning-path-section">
-            <h2>Your Learning Journey 🗺️</h2>
+            <div class="path-controls">
+                <h2>Your Learning Journey 🗺️</h2>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">Grid View</button>
+                    <button class="view-btn" data-view="list">List View</button>
+                </div>
+            </div>
+
             <nav class="module-path">
+                <!-- Module 1: Internet Basics -->
                 <div class="path-item active">
-                    <div class="level">Level 1</div>
+                    <div class="module-header">
+                        <div class="level">Level 1</div>
+                        <div class="xp-points">+50 XP</div>
+                    </div>
                     <h3>The Amazing Internet</h3>
                     <p>Discover how the internet works and why we use HTML!</p>
                     <div class="module-details">
                         <span>🕒 15 minutes</span>
                         <span>🎯 Beginner</span>
+                        <span>🏆 1 Achievement</span>
+                    </div>
+                    <div class="module-topics">
+                        <span class="topic">Web Browsers</span>
+                        <span class="topic">Servers</span>
+                        <span class="topic">URLs</span>
                     </div>
                     <a href="modules/internet-intro.html" class="start-module">Start Here! 🚀</a>
                 </div>
 
+                <!-- Module 2: HTML Basics -->
                 <div class="path-item">
-                    <div class="level">Level 2</div>
-                    <h3>Your First Webpage</h3>
-                    <p>Learn the basics of HTML and create your first webpage!</p>
+                    <div class="module-header">
+                        <div class="level">Level 2</div>
+                        <div class="xp-points">+100 XP</div>
+                    </div>
+                    <h3>HTML Adventure</h3>
+                    <p>Create your first webpage and master HTML elements!</p>
                     <div class="module-details">
                         <span>🕒 20 minutes</span>
                         <span>🎯 Beginner</span>
+                        <span>🏆 2 Achievements</span>
+                    </div>
+                    <div class="module-topics">
+                        <span class="topic">Tags</span>
+                        <span class="topic">Elements</span>
+                        <span class="topic">Structure</span>
+                    </div>
+                    <a href="modules/html-basics.html" class="start-module">Continue Learning 🎓</a>
+                </div>
+
+                <!-- Module 3: CSS Basics -->
+                <div class="path-item">
+                    <div class="module-header">
+                        <div class="level">Level 3</div>
+                        <div class="xp-points">+150 XP</div>
+                    </div>
+                    <h3>CSS Magic</h3>
+                    <p>Transform your webpage with colors, layouts, and animations!</p>
+                    <div class="module-details">
+                        <span>🕒 25 minutes</span>
+                        <span>🎯 Intermediate</span>
+                        <span>🏆 3 Achievements</span>
+                    </div>
+                    <div class="module-topics">
+                        <span class="topic">Colors</span>
+                        <span class="topic">Layout</span>
+                        <span class="topic">Animation</span>
                     </div>
                     <a href="#" class="start-module locked">Coming Soon! 🔒</a>
                 </div>
 
+                <!-- Module 4: JavaScript Basics -->
                 <div class="path-item">
-                    <div class="level">Level 3</div>
-                    <h3>Style Master</h3>
-                    <p>Make your webpage beautiful with colors and styles!</p>
+                    <div class="module-header">
+                        <div class="level">Level 4</div>
+                        <div class="xp-points">+200 XP</div>
+                    </div>
+                    <h3>JavaScript Magic</h3>
+                    <p>Add interactivity and make your website come alive!</p>
                     <div class="module-details">
-                        <span>🕒 25 minutes</span>
+                        <span>🕒 30 minutes</span>
                         <span>🎯 Intermediate</span>
+                        <span>🏆 4 Achievements</span>
+                    </div>
+                    <div class="module-topics">
+                        <span class="topic">Events</span>
+                        <span class="topic">Animation</span>
+                        <span class="topic">Games</span>
+                    </div>
+                    <a href="#" class="start-module locked">Coming Soon! 🔒</a>
+                </div>
+
+                <!-- Module 5: Web Design -->
+                <div class="path-item">
+                    <div class="module-header">
+                        <div class="level">Level 5</div>
+                        <div class="xp-points">+250 XP</div>
+                    </div>
+                    <h3>Web Design Fundamentals</h3>
+                    <p>Learn color theory, typography, and layout principles!</p>
+                    <div class="module-details">
+                        <span>🕒 35 minutes</span>
+                        <span>🎯 Intermediate</span>
+                        <span>🏆 3 Achievements</span>
+                    </div>
+                    <div class="module-topics">
+                        <span class="topic">Color Theory</span>
+                        <span class="topic">Typography</span>
+                        <span class="topic">Layout</span>
+                    </div>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">Not Started</span>
+                    </div>
+                    <a href="#" class="start-module locked">Coming Soon! 🔒</a>
+                </div>
+
+                <!-- Module 6: Responsive Design -->
+                <div class="path-item">
+                    <div class="module-header">
+                        <div class="level">Level 6</div>
+                        <div class="xp-points">+300 XP</div>
+                    </div>
+                    <h3>Responsive Magic</h3>
+                    <p>Make your websites work on all devices!</p>
+                    <div class="module-details">
+                        <span>🕒 40 minutes</span>
+                        <span>🎯 Advanced</span>
+                        <span>🏆 4 Achievements</span>
+                    </div>
+                    <div class="module-topics">
+                        <span class="topic">Media Queries</span>
+                        <span class="topic">Flexbox</span>
+                        <span class="topic">Grid</span>
+                    </div>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">Not Started</span>
                     </div>
                     <a href="#" class="start-module locked">Coming Soon! 🔒</a>
                 </div>
             </nav>
         </section>
 
+        <section class="achievements-section">
+            <h2>Your Achievements 🏆</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">🌟</div>
+                    <h3>First Steps</h3>
+                    <p>Complete your first module</p>
+                    <div class="achievement-progress">0/1</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">🔥</div>
+                    <h3>Quick Learner</h3>
+                    <p>Complete a module in under 15 minutes</p>
+                    <div class="achievement-progress">0/1</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">📚</div>
+                    <h3>Knowledge Seeker</h3>
+                    <p>Complete all basic modules</p>
+                    <div class="achievement-progress">0/3</div>
+                </div>
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">❓</div>
+                    <h3>Mystery Achievement</h3>
+                    <p>Keep learning to unlock!</p>
+                </div>
+            </div>
+        </section>
+
         <section class="fun-facts">
             <h2>Did You Know? 🤔</h2>
-            <div class="fact-container">
-                <p>The first website was created in 1991!</p>
-                <p>Over 1.7 billion websites exist today!</p>
-                <p>HTML stands for HyperText Markup Language!</p>
+            <div class="fact-carousel">
+                <div class="fact-card">
+                    <div class="fact-icon">🌍</div>
+                    <p>The first website was created in 1991!</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">📊</div>
+                    <p>Over 1.7 billion websites exist today!</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">💡</div>
+                    <p>HTML stands for HyperText Markup Language!</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🎨</div>
+                    <p>CSS was first released in 1996!</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">⚡</div>
+                    <p>JavaScript was created in just 10 days!</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">📱</div>
+                    <p>Mobile devices account for over 50% of web traffic!</p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev-fact">←</button>
+                <div class="fact-dots"></div>
+                <button class="next-fact">→</button>
+            </div>
+        </section>
+
+        <section class="community-section">
+            <h2>Join the Community 👥</h2>
+            <div class="community-cards">
+                <div class="community-card">
+                    <div class="card-icon">👥</div>
+                    <h3>Study Groups</h3>
+                    <p>Learn together with other students</p>
+                    <button class="join-btn">Join a Group</button>
+                </div>
+                <div class="community-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Discussion Forum</h3>
+                    <p>Ask questions and share knowledge</p>
+                    <button class="join-btn">Visit Forum</button>
+                </div>
+                <div class="community-card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Leaderboard</h3>
+                    <p>Compete with other learners</p>
+                    <button class="join-btn">View Rankings</button>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p class="love-message">Made with <span class="heart">❤️</span> by <img src="images/giiyo-tech-logo.png" alt="Giiyo Tech Logo" class="footer-logo"></p>
+        <p class="love-message">Made with <span class="heart">❤️</span> by <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo"></p>
     </footer>
 
     <button id="back-to-top" title="Back to top">
