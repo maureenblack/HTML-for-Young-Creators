@@ -1373,3 +1373,235 @@ pre span.emoji-indicator {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Did You Know Section */
+.did-you-know {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.did-you-know::before {
+    content: "💡";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 80px;
+    opacity: 0.1;
+    transform: rotate(15deg);
+}
+
+.did-you-know h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.did-you-know h3::before {
+    content: "🤔";
+    font-size: 1.2em;
+}
+
+.did-you-know p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.fun-fact {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fun-fact-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fun-fact-title::before {
+    content: "✨";
+}
+
+.did-you-know ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.did-you-know li {
+    padding: 8px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.did-you-know li::before {
+    content: "🌟";
+    flex-shrink: 0;
+}
+
+.source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.source-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.source-link::after {
+    content: "→";
+    transition: transform 0.3s ease;
+}
+
+.source-link:hover::after {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .did-you-know {
+        padding: 20px;
+    }
+
+    .did-you-know h3 {
+        font-size: 1.3em;
+    }
+
+    .did-you-know p {
+        font-size: 1em;
+    }
+}
+
+/* Daily Fun Fact */
+.daily-fun-fact {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    border-radius: 6px;
+    padding: 6px 12px;
+    margin: 8px 0;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.fun-fact-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.fact-icon {
+    font-size: 1em;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.fact-text {
+    flex: 1;
+    font-size: 0.85em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    animation: fadeInOut 10s ease-in-out infinite;
+}
+
+.fact-date {
+    font-size: 0.75em;
+    opacity: 0.8;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(5px); }
+    10%, 90% { opacity: 1; transform: translateY(0); }
+}
+
+/* Make it more compact on mobile */
+@media (max-width: 768px) {
+    .daily-fun-fact {
+        height: 28px;
+        padding: 4px 10px;
+    }
+    
+    .fact-text {
+        font-size: 0.8em;
+    }
+    
+    .fact-date {
+        font-size: 0.7em;
+    }
+}
+
+/* Daily Fun Fact within Did You Know section */
+.did-you-know .daily-fun-fact {
+    background: linear-gradient(135deg, rgba(33, 147, 176, 0.1), rgba(109, 213, 237, 0.1));
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.did-you-know .fun-fact-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.did-you-know .fact-icon {
+    font-size: 1.2em;
+    color: #2193b0;
+    animation: sparkle 2s infinite;
+}
+
+.did-you-know .fact-text {
+    flex: 1;
+    font-size: 1em;
+    line-height: 1.5;
+    opacity: 1;
+    animation: fadeInOut 10s ease-in-out infinite;
+}
+
+.did-you-know .fact-date {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: auto;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(5px); }
+    10%, 90% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}

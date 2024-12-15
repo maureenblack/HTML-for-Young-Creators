@@ -12,21 +12,22 @@
 </head>
 <body>
     <nav class="main-nav">
-        <div class="logo-container">
-            <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
+        <div class="nav-brand">
+            <img src="images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
+            <span class="brand-name">GiiyoTech</span>
         </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul class="nav-menu">
+        <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="modules/internet-intro.html">Internet Basics</a></li>
-            <li><a href="modules/basics.html">HTML Basics</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Resources</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li class="auth-buttons">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+            </li>
         </ul>
+        <button class="mobile-menu-btn">
+            <span class="hamburger"></span>
+        </button>
     </nav>
 
     <main>
@@ -264,64 +265,34 @@
                 </div>
             </div>
         </section>
-
-        <section class="fun-facts">
-            <h2>Did You Know? 🤔</h2>
-            <div class="fact-carousel">
-                <div class="fact-card">
-                    <div class="fact-icon">🌍</div>
-                    <p>The first website was created in 1991!</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">📊</div>
-                    <p>Over 1.7 billion websites exist today!</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">💡</div>
-                    <p>HTML stands for HyperText Markup Language!</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">🎨</div>
-                    <p>CSS was first released in 1996!</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">⚡</div>
-                    <p>JavaScript was created in just 10 days!</p>
-                </div>
-                <div class="fact-card">
-                    <div class="fact-icon">📱</div>
-                    <p>Mobile devices account for over 50% of web traffic!</p>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="prev-fact">←</button>
-                <div class="fact-dots"></div>
-                <button class="next-fact">→</button>
-            </div>
-        </section>
-
         <section class="community-section">
             <h2>Join the Community 👥</h2>
             <div class="community-features">
-                <div class="community-card locked">
-                    <div class="card-icon">👥</div>
+                <div class="community-card">
+                    <i class="fas fa-users"></i>
                     <h3>Study Groups</h3>
-                    <p>Learn together with other students</p>
-                    <div class="coming-soon-badge">Coming Soon! 🔒</div>
+                    <p>Coming Soon!</p>
                 </div>
-
-                <div class="community-card locked">
-                    <div class="card-icon">💬</div>
-                    <h3>Discussion Forum</h3>
-                    <p>Ask questions and share knowledge</p>
-                    <div class="coming-soon-badge">Coming Soon! 🔒</div>
+                <div class="community-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Discussion Forums</h3>
+                    <p>Coming Soon!</p>
                 </div>
+                <div class="community-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Group Projects</h3>
+                    <p>Coming Soon!</p>
+                </div>
+            </div>
+        </section>
 
-                <div class="community-card locked">
-                    <div class="card-icon">🏆</div>
-                    <h3>Leaderboard</h3>
-                    <p>Compete with other learners</p>
-                    <div class="coming-soon-badge">Coming Soon! 🔒</div>
+        <!-- Did You Know Section -->
+        <section class="fun-facts-section">
+            <h2>Did You Know? 🤔</h2>
+            <div class="daily-fun-fact">
+                <div class="fun-fact-content">
+                    <span class="fact-icon">✨</span>
+                    <div id="funFactDisplay"></div>
                 </div>
             </div>
         </section>
@@ -330,9 +301,13 @@
     <footer class="main-footer">
         <p class="love-message">Made with <span class="heart">❤️</span> by <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo"></p>
     </footer>
-    <button id="back-to-top" title="Back to Top">
+
+    <button id="scrollToTop" class="scroll-top" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Scripts -->
     <script src="scripts/main.js"></script>
+    <script src="scripts/fun-facts.js"></script>
 </body>
 </html>
