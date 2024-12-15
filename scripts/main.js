@@ -250,7 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
     factCarousel = new FactCarousel();
     viewControls = new ViewControls();
     dailyChallenge = new DailyChallenge();
-    
+
+    // Start the components
+    progress.init();
+    factCarousel.init();
+    viewControls.init();
+    dailyChallenge.init();
+
     // Add click handlers for module cards
     document.querySelectorAll('.path-item:not(.locked)').forEach(module => {
         module.addEventListener('click', () => {

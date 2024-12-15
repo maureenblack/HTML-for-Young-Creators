@@ -998,65 +998,13 @@ pre span.emoji-indicator {
 }
 
 .error-solution {
-    background: #f8f9fa;
-    padding: 1.2rem;
-    border-radius: 8px;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
     color: #37474f;
-    text-align: left;
+    text-align: center;
     max-width: 600px;
-    margin: 1rem auto;
-    border-left: 4px solid #4caf50;
-}
-
-.error-solution h4 {
-    color: #2e7d32;
-    margin: 0 0 0.8rem 0;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.error-solution p {
-    margin: 0 0 0.8rem 0;
-    color: #455a64;
-    font-size: 0.95rem;
-}
-
-.error-solution ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.error-solution ul li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #455a64;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.error-solution ul li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #4caf50;
-    font-weight: bold;
-}
-
-.error-solution ul li:last-child {
-    margin-bottom: 0;
-}
-
-.error-solution code {
-    background: #e8f5e9;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    color: #2e7d32;
-    font-family: monospace;
-    font-size: 0.9rem;
+    margin: 0 auto;
 }
 
 /* Booking Modal */

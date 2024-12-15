@@ -214,11 +214,13 @@ function showMessage(message, type = 'error') {
     const errorContainer = document.querySelector('.error-container');
     const errorMessage = document.querySelector('.error-message');
     const errorSolution = document.querySelector('.error-solution');
+    const nextButton = document.querySelector('.next-lesson-button');
     
     if (errorContainer && errorMessage) {
         errorContainer.style.display = 'block';
         errorMessage.textContent = message;
         
+        // Add the appropriate class for styling
         errorContainer.className = 'error-container ' + type;
         
         if (errorSolution) {
@@ -226,15 +228,17 @@ function showMessage(message, type = 'error') {
                 errorSolution.style.display = 'block';
                 errorSolution.innerHTML = `
                     <h4>💡 Need help?</h4>
-                    <p>Here's what you need to include:</p>
+                    <p>Remember to:</p>
                     <ul>
-                        <li>A heading using <code>&lt;h1&gt;</code> tags</li>
-                        <li>A paragraph using <code>&lt;p&gt;</code> tags</li>
-                        <li>A list using <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags</li>
-                        <li>Make sure to close all your tags</li>
+                        <li>Add a heading using &lt;h1&gt; tags</li>
+                        <li>Write a paragraph using &lt;p&gt; tags</li>
+                        <li>Create a list using &lt;ul&gt; and &lt;li&gt; tags</li>
+                        <li>Close all your tags (e.g., &lt;/h1&gt;, &lt;/p&gt;, &lt;/ul&gt;)</li>
                     </ul>`;
+                if (nextButton) nextButton.style.display = 'none';
             } else {
                 errorSolution.style.display = 'none';
+                if (nextButton) nextButton.style.display = 'block';
             }
         }
     }
