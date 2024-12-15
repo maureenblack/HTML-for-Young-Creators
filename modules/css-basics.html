@@ -1,250 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Magic - HTML Young Innovators</title>
+    <title>CSS Basics - HTML for Young Innovators</title>
+    <link rel="icon" type="image/png" href="../images/giiyotech_logo.png">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/animations.css">
     <link rel="stylesheet" href="../styles/modules.css">
-    <link rel="stylesheet" href="../styles/rewards.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <a href="#main" class="skip-to-main">Skip to main content</a>
-    
+    <!-- Main Container -->
     <div class="container">
-        <nav class="main-nav" role="navigation">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="logo-container">
+                <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
+            </div>
             <a href="../index.html" class="back-link">← Back to Home</a>
         </nav>
 
-        <main id="main" class="module-content" role="main">
-            <h1>CSS Magic: Make Your Website Beautiful! 🎨</h1>
+        <!-- Main Content -->
+        <main class="module-content">
+            <h1>CSS Basics: Making Mount Eloumdem Beautiful! 🎨</h1>
 
-            <section class="interactive-section" data-section="css-intro">
-                <h2>Style Your Website! 🖌️</h2>
+            <!-- Course Image -->
+            <div class="course-image css-basics-image">
+                <img src="/images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg"
+                    alt="Beautiful view of Mount Eloumdem in Yaoundé, Cameroon">
+            </div>
+
+            <!-- Introduction Section -->
+            <section class="content-section">
+                <h2>Understanding CSS: Styling Our Mountain Webpage 🖌️</h2>
                 <div class="content-box">
-                    <div class="color-playground" role="region" aria-label="CSS Color Playground">
-                        <div class="preview-box">
-                            <div class="sample-element" id="styleTarget">
-                                <h3>Style Me!</h3>
-                                <p>Change my colors and style!</p>
-                            </div>
-                        </div>
-                        <div class="style-controls">
-                            <div class="control-group">
-                                <label for="textColor">Text Color:</label>
-                                <input type="color" id="textColor" value="#000000">
-                            </div>
-                            <div class="control-group">
-                                <label for="bgColor">Background Color:</label>
-                                <input type="color" id="bgColor" value="#ffffff">
-                            </div>
-                            <div class="control-group">
-                                <label for="fontSize">Font Size:</label>
-                                <input type="range" id="fontSize" min="12" max="48" value="16">
-                                <span class="value-display">16px</span>
-                            </div>
-                            <div class="control-group">
-                                <label for="borderRadius">Round Corners:</label>
-                                <input type="range" id="borderRadius" min="0" max="50" value="0">
-                                <span class="value-display">0px</span>
-                            </div>
-                        </div>
+                    <p>Now that we've built our webpage about Mount Eloumdem, let's make it beautiful! Just like how the mountain
+                        has different colors, textures, and patterns, CSS helps us add style to our webpage:</p>
+
+                    <h3>What is CSS? 🤔</h3>
+                    <p>CSS stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets. Think of it as our
+                        artistic toolkit:</p>
+                    <ul class="key-points">
+                        <li><strong>Cascading:</strong> Like water flowing down Mount Eloumdem, styles flow from general to specific
+                        </li>
+                        <li><strong>Style:</strong> Just as the mountain has different colors and textures, CSS adds visual style to
+                            our webpage</li>
+                        <li><strong>Sheets:</strong> We organize our styles in sheets, like organizing different areas of the
+                            mountain</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Learning Section -->
+            <section class="content-section">
+                <h2>Basic CSS Properties 🎯</h2>
+                <div class="content-box">
+                    <p>Let's learn some basic CSS properties to style our mountain webpage:</p>
+
+                    <div class="tag-section">
+                        <h4>Colors and Backgrounds</h4>
+                        <pre class="code-example">
+color: green;           /* Text color */
+background: #87CEEB;    /* Sky blue background */
+border: 2px solid brown;</pre>
+                    </div>
+
+                    <div class="tag-section">
+                        <h4>Text Styling</h4>
+                        <pre class="code-example">
+font-size: 24px;       /* Text size */
+font-weight: bold;     /* Bold text */
+text-align: center;    /* Center alignment */</pre>
+                    </div>
+
+                    <div class="tag-section">
+                        <h4>Spacing and Layout</h4>
+                        <pre class="code-example">
+margin: 20px;          /* Space around elements */
+padding: 15px;         /* Space inside elements */
+border-radius: 10px;   /* Rounded corners */</pre>
                     </div>
                 </div>
             </section>
 
-            <section class="challenge-section" data-section="css-challenge">
-                <h2>Style Challenge! 🏆</h2>
-                <div class="challenge-box">
-                    <div class="target-design">
-                        <h3>Make it look like this:</h3>
-                        <div class="target-example">
-                            <div class="styled-box">
-                                <h4>Cool Title</h4>
-                                <p>Awesome text!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="your-attempt">
-                        <h3>Your Version:</h3>
-                        <div class="code-playground">
-                            <div class="code-editor" contenteditable="true" aria-label="CSS Editor">
-.styled-box {
-    /* Add your CSS here! */
-}</div>
-                            <div class="preview-box">
-                                <div class="styled-box">
-                                    <h4>Cool Title</h4>
-                                    <p>Awesome text!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="check-style-button">Check My Style! ✨</button>
-                    </div>
-                </div>
-            </section>
+            <!-- Practice Section -->
+            <section class="content-section">
+                <h2>Let's Style Our Mountain Page! 🏔️</h2>
+                <div class="content-box">
+                    <p>Now it's your turn! Style the webpage about Mount Eloumdem using CSS. Include:</p>
+                    <ul class="task-list">
+                        <li>Add colors to make the heading stand out</li>
+                        <li>Style the paragraph text to be easy to read</li>
+                        <li>Make the list look beautiful with spacing</li>
+                    </ul>
+                    <div class="code-playground">
+                        <div class="code-editor" contenteditable="true">
+                            <pre>/* Add your CSS styles here */
+h1 {
+    /* Style your heading */
+}
 
-            <section class="animation-section" data-section="css-animation">
-                <h2>CSS Animation Fun! 💫</h2>
-                <div class="animation-playground">
-                    <div class="animation-controls">
-                        <button class="animation-preset" data-animation="bounce">Bounce</button>
-                        <button class="animation-preset" data-animation="spin">Spin</button>
-                        <button class="animation-preset" data-animation="shake">Shake</button>
-                        <button class="animation-preset" data-animation="pulse">Pulse</button>
-                    </div>
-                    <div class="animation-target">
-                        <div class="animated-box">
-                            <span class="emoji">🎨</span>
+p {
+    /* Style your paragraph */
+}
+
+ul {
+    /* Style your list */
+}</pre>
                         </div>
+                        <button class="run-button">See Your Styled Page ✨</button>
                     </div>
-                    <div class="animation-code">
-                        <pre><code class="animation-snippet">/* Animation will appear here */</code></pre>
+                    <div class="preview-window">
+                        <div class="preview-content">
+                            <h1>Welcome to Mount Eloumdem</h1>
+                            <p>Discover the beautiful Mount Eloumdem in Yaoundé, Cameroon</p>
+                            <ul>
+                                <li>Hiking</li>
+                                <li>Photography</li>
+                                <li>Bird watching</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
+    </div>
 
-        <div class="progress-tracker" role="complementary">
-            <div class="progress-item" data-section="css-intro">
-                <span>🎨</span>
-                <p>CSS Intro</p>
-            </div>
-            <div class="progress-item" data-section="css-challenge">
-                <span>🏆</span>
-                <p>Challenge</p>
-            </div>
-            <div class="progress-item" data-section="css-animation">
-                <span>💫</span>
-                <p>Animation</p>
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book a Session</h2>
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select a time</option>
+                        <option value="morning">Morning (9AM - 12PM)</option>
+                        <option value="afternoon">Afternoon (1PM - 4PM)</option>
+                        <option value="evening">Evening (5PM - 8PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="book-button">Book Now</button>
             </div>
         </div>
     </div>
 
-    <script src="../js/modules.js"></script>
-    <script src="../js/rewards.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Color playground functionality
-            const styleTarget = document.getElementById('styleTarget');
-            const controls = {
-                textColor: document.getElementById('textColor'),
-                bgColor: document.getElementById('bgColor'),
-                fontSize: document.getElementById('fontSize'),
-                borderRadius: document.getElementById('borderRadius')
-            };
+    <!-- Error Container -->
+    <div class="error-container" style="text-align: center;">
+        <p class="error-message"></p>
+        <div class="error-solution"></div>
+        <a href="javascript-basics.html" class="next-lesson-button">
+            Next →
+        </a>
+    </div>
 
-            Object.entries(controls).forEach(([property, control]) => {
-                control.addEventListener('input', (e) => {
-                    const value = e.target.value;
-                    switch(property) {
-                        case 'textColor':
-                            styleTarget.style.color = value;
-                            break;
-                        case 'bgColor':
-                            styleTarget.style.backgroundColor = value;
-                            break;
-                        case 'fontSize':
-                            styleTarget.style.fontSize = `${value}px`;
-                            control.nextElementSibling.textContent = `${value}px`;
-                            break;
-                        case 'borderRadius':
-                            styleTarget.style.borderRadius = `${value}px`;
-                            control.nextElementSibling.textContent = `${value}px`;
-                            break;
-                    }
-                    checkStyleProgress();
-                });
-            });
+    <!-- Back to Top -->
+    <button id="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-            // Animation playground
-            const animationButtons = document.querySelectorAll('.animation-preset');
-            const animatedBox = document.querySelector('.animated-box');
-            const codeSnippet = document.querySelector('.animation-snippet');
-
-            const animations = {
-                bounce: {
-                    css: `@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}`,
-                    class: 'bounce'
-                },
-                spin: {
-                    css: `@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}`,
-                    class: 'spin'
-                },
-                shake: {
-                    css: `@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-}`,
-                    class: 'shake'
-                },
-                pulse: {
-                    css: `@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}`,
-                    class: 'pulse'
-                }
-            };
-
-            animationButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const animation = animations[button.dataset.animation];
-                    animatedBox.className = 'animated-box ' + animation.class;
-                    codeSnippet.textContent = animation.css;
-                    rewardSystem.awardPoints(5);
-                });
-            });
-
-            function checkStyleProgress() {
-                const hasColor = styleTarget.style.color !== '';
-                const hasBg = styleTarget.style.backgroundColor !== '';
-                const hasSize = styleTarget.style.fontSize !== '';
-                const hasRadius = styleTarget.style.borderRadius !== '';
-
-                if (hasColor && hasBg && hasSize && hasRadius) {
-                    rewardSystem.unlockAchievement('css_master');
-                }
-            }
-
-            // Style challenge checker
-            const checkStyleButton = document.querySelector('.check-style-button');
-            if (checkStyleButton) {
-                checkStyleButton.addEventListener('click', () => {
-                    const codeEditor = document.querySelector('.code-editor');
-                    const code = codeEditor.textContent;
-                    
-                    // Simple check for required properties
-                    const hasColor = code.includes('color');
-                    const hasBackground = code.includes('background');
-                    const hasBorder = code.includes('border');
-                    
-                    if (hasColor && hasBackground && hasBorder) {
-                        rewardSystem.awardPoints(20);
-                        rewardSystem.unlockAchievement('style_master');
-                        showMessage('Amazing styling! 🎨', 'success');
-                    } else {
-                        showMessage('Keep trying! Try adding more styles! 💪', 'info');
-                    }
-                });
-            }
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/css-basics.js"></script>
 </body>
-<footer class="main-footer">
-    <p class="love-message">Made with <span class="heart">❤️</span> by <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="footer-logo"></p>
-</footer>
-<button id="back-to-top" title="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-</button>
-<script src="../scripts/main.js"></script>
+
 </html>
