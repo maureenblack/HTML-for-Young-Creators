@@ -1,275 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Basics - HTML for Young Innovators</title>
-    <link rel="icon" type="image/png" href="../images/giiyotech_logo.png">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/animations.css">
+    <title>HTML Basics - Module 1 | GiiyoTech</title>
+    <link rel="icon" type="image/png" href="../images/giiyotech logo.png">
     <link rel="stylesheet" href="../styles/modules.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <div class="logo-container">
-                <img src="/images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
+
+    <div class="course-container">
+        <aside class="course-sidebar">
+            <div class="module-list">
+                <h3>HTML Course Modules</h3>
+                <ul>
+                    <li class="active"><a href="html-basics.html">Module 1: Introduction to HTML</a></li>
+                    <li><a href="html-module2.html">Module 2: HTML Elements & Structure</a></li>
+                    <li><a href="html-module3.html">Module 3: Text & Links</a></li>
+                    <li><a href="html-module4.html">Module 4: Images & Media</a></li>
+                    <li><a href="html-module5.html">Module 5: Lists & Tables</a></li>
+                    <li><a href="html-module6.html">Module 6: Forms & Input</a></li>
+                    <li><a href="html-module7.html">Module 7: Semantic HTML</a></li>
+                </ul>
             </div>
-            <a href="../index.html" class="back-link">← Back to Home</a>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="module-content">
-            <h1>HTML Basics: Let's Build a Webpage about Mount Eloumdem! 🏗️</h1>
-
-            <!-- Course Image -->
-            <div class="course-image html-basics-image">
-                <img src="/images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg"
-                    alt="Beautiful view of Mount Eloumdem in Yaoundé, Cameroon">
+            <div class="progress-tracker">
+                <h3>Your Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 14%"></div>
+                </div>
+                <p>1/7 Modules Completed</p>
             </div>
+        </aside>
 
-            <!-- Introduction Section -->
-            <section class="content-section">
-                <h2>Understanding HTML: Building Our Mountain Webpage 📝</h2>
-                <div class="content-box">
-                    <p>Just like Mount Eloumdem has different parts - its base, slopes, and peak - websites also have
-                        different parts that work together! Let's learn how HTML helps us create a beautiful webpage
-                        about our mountain:</p>
-
-                    <h3>What is HTML? 🤔</h3>
-                    <p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup
-                        <strong>L</strong>anguage. Think of it as our toolbox for building webpages:</p>
-                    <ul class="key-points">
-                        <li><strong>HyperText:</strong> Like trails connecting different parts of Mount Eloumdem,
-                            hypertext connects different parts of our website</li>
-                        <li><strong>Markup:</strong> Just as we use signs to mark trails on the mountain, we use HTML to
-                            mark different parts of our webpage</li>
-                        <li><strong>Language:</strong> A set of rules that helps us organize our content, like the rules
-                            hikers follow on the mountain</li>
-                    </ul>
-
-                    <div class="example-section">
-                        <p>Let's see how HTML works with a simple example about Mount Eloumdem:</p>
-                        <pre>
-&lt;h1&gt;Welcome to Mount Eloumdem&lt;/h1&gt;
-&lt;p&gt;A beautiful mountain in Yaoundé, Cameroon&lt;/p&gt;</pre>
-                        <p>The browser knows that "Welcome to Mount Eloumdem" is a big heading, and the description is a
-                            paragraph!</p>
-                    </div>
+        <main class="course-content">
+            <section class="module-header">
+                <h1>Module 1: Introduction to HTML</h1>
+                <div class="module-info">
+                    <span><i class="fas fa-clock"></i> 30 minutes</span>
+                    <span><i class="fas fa-book"></i> Beginner</span>
                 </div>
             </section>
 
-            <!-- HTML Tags Explained -->
-            <section class="content-section">
-                <h2>HTML Tags: The Building Blocks of Our Mountain Guide 🧱</h2>
-                <div class="content-box">
-                    <h3>Basic Page Structure</h3>
-                    <p>Just like Mount Eloumdem has its structure, our webpage needs a proper structure too:</p>
-                    <pre>
-&lt;!DOCTYPE html&gt;            👈 Like saying "This is a modern webpage about Mount Eloumdem"
-&lt;html&gt;                    👈 The whole mountain (our entire webpage)
-    &lt;head&gt;                👈 Planning our mountain tour (webpage information)
-        &lt;title&gt;Mount Eloumdem Guide&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;                👈 The actual mountain tour (visible content)
-        Your mountain content goes here!
-    &lt;/body&gt;
-&lt;/html&gt;</pre>
+            <section class="module-content">
+                <h2>What is HTML?</h2>
+                <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of web pages using markup.</p>
 
-                    <h3>Text Tags: Describing Our Mountain 📝</h3>
-                    <div class="tag-section">
-                        <h4>Headings</h4>
-                        <pre class="code-example">
-&lt;h1&gt;Main Title&lt;/h1&gt;
-&lt;h2&gt;Subtitle&lt;/h2&gt;
-&lt;h3&gt;Section Title&lt;/h3&gt;</pre>
-                    </div>
-
-                    <div class="tag-section">
-                        <h4>Paragraphs and Text</h4>
-                        <pre class="code-example">
-&lt;p&gt;This is a paragraph about Mount Eloumdem.&lt;/p&gt;
-&lt;strong&gt;Important text&lt;/strong&gt;
-&lt;em&gt;Emphasized text&lt;/em&gt;</pre>
-                    </div>
-
-                    <div class="tag-section">
-                        <h4>Lists</h4>
-                        <pre class="code-example">
-&lt;ul&gt;
-    &lt;li&gt;First item&lt;/li&gt;
-    &lt;li&gt;Second item&lt;/li&gt;
-&lt;/ul&gt;</pre>
-                    </div>
-
-                    <div class="tag-section">
-                        <h4>Images: Showing Off Our Mountain 🖼️</h4>
-                        <p>Let's add some beautiful pictures of Mount Eloumdem:</p>
-                        <pre>&lt;img src="mount_eloumdem.jpg" alt="Scenic view of Mount Eloumdem at sunset"&gt;</pre>
-                        <p><strong>Tip:</strong> The alt text helps people understand what the image shows if they can't
-                            see it!</p>
-                    </div>
-
-                    <div class="tag-section">
-                        <h4>Links: Connecting Mountain Information 🔗</h4>
-                        <p>Create links to different parts of our mountain guide:</p>
-                        <pre>&lt;a href="trails.html"&gt;Explore Mount Eloumdem Trails&lt;/a&gt;</pre>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Common Mistakes Section -->
-            <section class="content-section">
-                <h2>Trail Markers: Avoiding Common Mistakes ⚠️</h2>
-                <div class="content-box">
-                    <p>Just like following the right trail on Mount Eloumdem, we need to follow the right HTML rules:
-                    </p>
+                <div class="key-points">
+                    <h3>In this module, you'll learn:</h3>
                     <ul>
-                        <li><strong>Always close your tags:</strong>
-                            <pre>
-✅ Correct:
-&lt;p&gt;Mount Eloumdem is beautiful&lt;/p&gt;
-
-❌ Wrong:
-&lt;p&gt;Mount Eloumdem is beautiful</pre>
-                        </li>
-                        <li><strong>Use quotes for attributes:</strong>
-                            <pre>
-✅ Correct:
-&lt;img src="mountain_view.jpg" alt="Mount Eloumdem peak"&gt;
-
-❌ Wrong:
-&lt;img src=mountain_view.jpg alt=Mount Eloumdem peak&gt;</pre>
-                        </li>
+                        <li>Basic structure of an HTML document</li>
+                        <li>How to create your first HTML page</li>
+                        <li>Understanding HTML tags and elements</li>
+                        <li>Essential HTML document setup</li>
                     </ul>
+                </div>
+
+                <div class="example-code">
+                    <h3>Your First HTML Document</h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Practice Exercise</h3>
+                    <p>Try creating your first HTML document using the structure above. Save it with a .html extension and open it in your web browser.</p>
                 </div>
             </section>
 
-            <!-- Practice Section -->
-            <section class="content-section">
-                <h2>Your Turn: Create Your Mount Eloumdem Webpage! 🎯</h2>
-                <div class="content-box">
-                    <p>Now that you know the basics, let's create a webpage about Mount Eloumdem! Include:</p>
-                    <ul class="task-list">
-                        <li>Add a main heading introducing the mountain</li>
-                        <li>Write a paragraph describing its location and features</li>
-                        <li>Create a list of activities visitors can enjoy</li>
-                    </ul>
-                    <div class="code-playground">
-                        <div class="code-editor" contenteditable="true">
-                            <pre>&lt;!-- Create your Mount Eloumdem webpage here! --&gt;
-&lt;img src="/images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="Beautiful view of Mount Eloumdem" style="width: 200px;"&gt;
-
-&lt;!-- Add your content below: --&gt;
-</pre>
-                        </div>
-                        <button class="run-button">See Your Mountain Page ✨</button>
-                    </div>
-                    <div class="preview-window"></div>
+            <section class="module-complete">
+                <div class="completion-message">
+                    <h2>🎉 Congratulations!</h2>
+                    <p>You've completed Module 1 of the HTML course. Ready to move on to Module 2?</p>
+                </div>
+                <div class="navigation-buttons">
+                    <a href="../index.html" class="prev-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                    <a href="html-module2.html" class="next-btn">Next Module <i class="fas fa-arrow-right"></i></a>
                 </div>
             </section>
         </main>
-
-        <button id="scrollToTop" class="scroll-top" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-
     </div>
-    <!-- Error Container -->
-    <div class="error-container" style="text-align: center;">
-        <p class="error-message"></p>
-        <div class="error-solution"></div>
-        <a href="css-basics.html" class="next-lesson-button">
-            Next →
-        </a>
-    </div>
-    <!-- Back to Top -->
+
     <button id="back-to-top" title="Back to Top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    <!-- Support Section -->
-    <div class="support-section">
-        <div class="help-container">
-            <div class="hint-box">
-                <h3>Need Help?</h3>
-                <p>Click below for hints on how to write proper HTML code.</p>
-                <button class="hint-button">Show Hint</button>
-                <div class="hint-content"></div>
-            </div>
-            <div class="book-session">
-                <h3>Personal Guidance</h3>
-                <p>Book a one-on-one session with an HTML expert to master the basics.</p>
-                <button class="booking-button">Book Session</button>
-            </div>
-        </div>
-    </div>
-    <!-- Booking Modal -->
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Book a Session</h2>
-            <div class="booking-form">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="date">Preferred Date</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Preferred Time</label>
-                    <select id="time" name="time" required>
-                        <option value="">Select a time</option>
-                        <option value="morning">Morning (9AM - 12PM)</option>
-                        <option value="afternoon">Afternoon (1PM - 4PM)</option>
-                        <option value="evening">Evening (5PM - 8PM)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Additional Notes</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="book-button">Book Now</button>
-            </div>
-        </div>
-    </div>
-    <!-- Progress Tracker -->
-    <div class="progress-tracker">
-        <div class="progress-item">
-            <span>📝</span>
-            <p>HTML Intro</p>
-        </div>
-        <div class="progress-item">
-            <span>🎯</span>
-            <p>Practice</p>
-        </div>
-    </div>
-    <!-- Scripts -->
+
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/html-basics.js"></script>
-    <script src="../scripts/fun-facts.js"></script>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p class="love-message">Made with <span class="heart">❤️</span> by <img src="/images/giiyotech logo.png"
-                    alt="GiiyoTech Logo" class="footer-logo"></p>
-        </div>
-    </footer>
 </body>
-
 </html>

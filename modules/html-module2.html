@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements & Structure - Module 2 | GiiyoTech</title>
+    <link rel="icon" type="image/png" href="../images/giiyotech logo.png">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="logo-container">
+            <img src="../images/giiyotech logo.png" alt="GiiyoTech Logo" class="nav-logo">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../resources.html">Resources</a></li>
+            <li class="auth-links">
+                <a href="../login.html" class="login">Login</a>
+                <a href="../signup.html" class="signup">Sign Up</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="course-container">
+        <aside class="course-sidebar">
+            <div class="module-list">
+                <h3>HTML Course Modules</h3>
+                <ul>
+                    <li><a href="html-basics.html">Module 1: Introduction to HTML</a></li>
+                    <li class="active"><a href="html-module2.html">Module 2: HTML Elements & Structure</a></li>
+                    <li><a href="html-module3.html">Module 3: Text & Links</a></li>
+                    <li><a href="html-module4.html">Module 4: Images & Media</a></li>
+                    <li><a href="html-module5.html">Module 5: Lists & Tables</a></li>
+                    <li><a href="html-module6.html">Module 6: Forms & Input</a></li>
+                    <li><a href="html-module7.html">Module 7: Semantic HTML</a></li>
+                </ul>
+            </div>
+            <div class="progress-tracker">
+                <h3>Your Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 28%"></div>
+                </div>
+                <p>2/7 Modules Completed</p>
+            </div>
+        </aside>
+
+        <main class="course-content">
+            <section class="module-header">
+                <h1>Module 2: HTML Elements & Structure</h1>
+                <div class="module-info">
+                    <span><i class="fas fa-clock"></i> 45 minutes</span>
+                    <span><i class="fas fa-book"></i> Beginner</span>
+                </div>
+            </section>
+
+            <section class="module-content">
+                <h2>Understanding HTML Elements</h2>
+                <p>HTML elements are the building blocks of every webpage. Let's explore how they work together to create structured content.</p>
+
+                <div class="key-points">
+                    <h3>In this module, you'll learn:</h3>
+                    <ul>
+                        <li>HTML document structure and hierarchy</li>
+                        <li>Block vs. inline elements</li>
+                        <li>Nesting elements properly</li>
+                        <li>Common HTML elements and their uses</li>
+                    </ul>
+                </div>
+
+                <div class="example-code">
+                    <h3>HTML Document Structure</h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Main Content&lt;/h2&gt;
+            &lt;p&gt;This is the main content of the page.&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2024 My Website&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <div class="practice-section">
+                    <h3>Practice Exercise</h3>
+                    <p>Create a simple webpage that includes a header, navigation menu, main content area, and footer. Use the structure shown in the example above as a guide.</p>
+                </div>
+            </section>
+
+            <section class="module-complete">
+                <div class="completion-message">
+                    <h2>🎉 Congratulations!</h2>
+                    <p>You've completed Module 2 of the HTML course. Ready to move on to Module 3?</p>
+                </div>
+                <div class="navigation-buttons">
+                    <a href="html-basics.html" class="prev-btn"><i class="fas fa-arrow-left"></i> Previous Module</a>
+                    <a href="html-module3.html" class="next-btn">Next Module <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <button id="back-to-top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>
