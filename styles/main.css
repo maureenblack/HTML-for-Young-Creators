@@ -434,6 +434,59 @@ section {
     transform: scale(1.05);
 }
 
+/* Community Section */
+.community-section {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.community-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.community-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0.8;
+}
+
+.community-card.locked {
+    background: #f8f9fa;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.community-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.community-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.coming-soon-badge {
+    background: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
 /* Footer */
 footer {
     text-align: center;
