@@ -71,8 +71,58 @@
                 </div>
 
                 <div class="practice-section">
-                    <h3>Practice Exercise</h3>
-                    <p>Try creating your first HTML document using the structure above. Save it with a .html extension and open it in your web browser.</p>
+                    <h2>Your Turn: Create Your Mount Eloumdem Webpage! 🎯</h2>
+                    <div class="content-box">
+                        <p>Now that you know the basics, let's create a webpage about Mount Eloumdem! Include:</p>
+                        <ul class="task-list">
+                            <li>Add a main heading introducing the mountain</li>
+                            <li>Write a paragraph describing its location and features</li>
+                            <li>Create a list of activities visitors can enjoy</li>
+                        </ul>
+                        <div class="code-playground">
+                            <div class="code-editor" contenteditable="true">
+                                <pre>&lt;!-- Create your Mount Eloumdem webpage here! --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;Mount Eloumdem Guide&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;img src="/images/Mt._Eloumdem,_Yaoundé_Cameroon.jpg" alt="Beautiful view of Mount Eloumdem" style="width: 200px;"&gt;
+
+&lt;!-- Add your content below: --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                            </div>
+                            <button class="run-button">Run Code ▶</button>
+                        </div>
+                        <div class="preview-window"></div>
+                    </div>
+                </div>
+
+                <div class="support-section">
+                    <div class="help-container">
+                        <div class="hint-box">
+                            <h3>Need Help?</h3>
+                            <p>Click below for hints on how to write proper HTML code.</p>
+                            <button class="hint-button">Show Hint</button>
+                            <div class="hint-content">
+                                <ul>
+                                    <li>Start with an &lt;h1&gt; tag for your main heading</li>
+                                    <li>Use &lt;p&gt; tags for your paragraphs</li>
+                                    <li>Create an unordered list with &lt;ul&gt; and &lt;li&gt; tags</li>
+                                    <li>Don't forget to add descriptive alt text to your image</li>
+                                    <li>Make sure all your tags are properly closed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-session">
+                            <h3>Personal Guidance</h3>
+                            <p>Book a one-on-one session with an HTML expert to master the basics.</p>
+                            <button class="booking-button">Book Session</button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -89,10 +139,60 @@
         </main>
     </div>
 
+    <!-- Booking Modal -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book a Session</h2>
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select a time</option>
+                        <option value="morning">Morning (9AM - 12PM)</option>
+                        <option value="afternoon">Afternoon (1PM - 4PM)</option>
+                        <option value="evening">Evening (5PM - 8PM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Notes</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="book-button">Book Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Container -->
+    <div class="error-container" style="text-align: center;">
+        <p class="error-message"></p>
+        <div class="error-solution"></div>
+        <a href="css-basics.html" class="next-lesson-button">
+            Next →
+        </a>
+    </div>
+
     <button id="back-to-top" title="Back to Top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="../js/modules.js"></script>
     <script src="../scripts/main.js"></script>
 </body>
 </html>
