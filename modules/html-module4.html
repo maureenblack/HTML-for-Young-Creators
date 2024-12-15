@@ -26,9 +26,18 @@
         </aside>
         <main class="course-content">
             <h1>Module 4: Images & Media</h1>
-            <p>Learn how to add images and media to your webpage.</p>
+            <h2>Understanding Images and Media</h2>
+            <p>This module focuses on how to add images and media to your webpage, specifically featuring Mount Eloumdem, which enhances the visual appeal of your content.</p>
+            <img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem" style="width:100%; height:auto;">
+            <p>To add an image of Mount Eloumdem, you can use the following syntax:</p>
+            <pre>&lt;img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem"&gt;</pre>
+            <p>Replace <code>path/to/mount-eloumdem.jpg</code> with the actual path to your image file and <code>Mount Eloumdem</code> with a brief description of the image.</p>
+            <h3>Exercise</h3>
+            <p>Your task is to add an image of Mount Eloumdem to the page. Use the following code as a reference:</p>
+            <pre>&lt;img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem"&gt;</pre>
+            <p>Make sure to replace <code>path/to/mount-eloumdem.jpg</code> with the correct path to your image.</p>
             <div class="code-editor" contenteditable="true">
-                <pre>&lt;img src="image.jpg" alt="Description"&gt;</pre>
+                <pre>&lt;img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem"&gt;</pre>
             </div>
             <button class="run-button">Run Code ▶</button>
             <div class="preview-window"></div>
@@ -38,15 +47,31 @@
                         <h3>Need Help?</h3>
                         <p>Click below for hints on this exercise.</p>
                         <button class="hint-button">Show Hint</button>
-                        <div class="hint-content">
-                            <ul>
-                                <li>Use the &lt;img&gt; tag to add images.</li>
-                                <li>Ensure you have a valid src attribute.</li>
-                            </ul>
-                        </div>
+                        <div class="hint-content" style="display:none;"></div>
                     </div>
                 </div>
             </div>
+            <div class="error-message" style="display:none; color:red; background-color: #f8d7da; padding: 10px; border-radius: 5px; border: 1px solid #f5c6cb;"></div>
+            <script>
+                document.querySelector('.run-button').addEventListener('click', function() {
+                    const userInput = document.querySelector('.code-editor').innerText;
+                    const correctAnswer = '&lt;img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem"&gt;';
+                    const completionMessage = document.querySelector('.completion-message');
+                    const errorMessage = document.querySelector('.error-message');
+                    const nextButton = document.querySelector('.next-btn');
+
+                    if (userInput.trim() === correctAnswer) {
+                        completionMessage.innerText = '✔️ Correct! You have added the image correctly.';
+                        errorMessage.style.display = 'none';
+                        nextButton.style.display = 'inline';
+                    } else {
+                        errorMessage.innerText = '❌ Error: Please ensure your image tag is correctly formatted.';
+                        errorMessage.style.display = 'block';
+                        completionMessage.style.display = 'none';
+                        nextButton.style.display = 'none';
+                    }
+                });
+            </script>
             <section class="module-complete">
                 <div class="completion-message" style="display:none;">
                     <h2>🎉 Congratulations!</h2>
@@ -57,9 +82,16 @@
                     <a href="html-module5.html" class="next-btn">Next Module <i class="fas fa-arrow-right"></i></a>
                 </div>
             </section>
-            <button class="home-button"><a href="index.html">Back to Home</a></button>
+            <button class="home-button" style="position: fixed; top: 10px; left: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;"><a href="index.html" style="color: white; text-decoration: none;">Back to Home</a></button>
         </main>
     </div>
     <script src="../js/modules.js"></script>
+    <script>
+        document.querySelector('.hint-button').addEventListener('click', function() {
+            const hintContent = 'Use the &lt;img&gt; tag to add images and ensure the path is correct!';
+            document.querySelector('.hint-content').innerHTML = hintContent;
+            document.querySelector('.hint-content').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

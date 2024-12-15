@@ -26,13 +26,25 @@
         </aside>
         <main class="course-content">
             <h1>Module 6: Forms & Input</h1>
-            <p>Learn how to create forms for user input.</p>
+            <h2>Understanding Forms and Input</h2>
+            <p>This module covers how to create forms for user input, using Mount Eloumdem as a context for collecting visitor feedback.</p>
+            <img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem" style="width:100%; height:auto;">
+            <p>To create a simple feedback form for visitors to Mount Eloumdem, use the following syntax:</p>
+            <pre>&lt;form&gt;
+    &lt;input type="text" placeholder="Your Name"&gt;
+    &lt;input type="email" placeholder="Your Email"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</pre>
+            <p>In this example, the form collects a user's name and email address.</p>
+            <h3>Exercise</h3>
+            <p>Your task is to create a form that collects feedback about Mount Eloumdem:</p>
             <div class="code-editor" contenteditable="true">
                 <pre>&lt;form&gt;
-    &lt;input type="text" placeholder="Your Name"&gt;
+    &lt;input type="text" placeholder="Your Feedback"&gt;
     &lt;input type="submit" value="Submit"&gt;
 &lt;/form&gt;</pre>
             </div>
+            <p>Ensure that your form is correctly formatted and includes a placeholder.</p>
             <button class="run-button">Run Code ▶</button>
             <div class="preview-window"></div>
             <div class="support-section">
@@ -41,12 +53,7 @@
                         <h3>Need Help?</h3>
                         <p>Click below for hints on this exercise.</p>
                         <button class="hint-button">Show Hint</button>
-                        <div class="hint-content">
-                            <ul>
-                                <li>Use the &lt;form&gt; tag to create a form.</li>
-                                <li>Add input elements for user input.</li>
-                            </ul>
-                        </div>
+                        <div class="hint-content" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -55,14 +62,40 @@
                     <h2>🎉 Congratulations!</h2>
                     <p>You've completed Module 6 and learned about forms and input. Ready to move on to Module 7?</p>
                 </div>
+                <div class="error-message" style="display:none; color:red; background-color: #f8d7da; padding: 10px; border-radius: 5px; border: 1px solid #f5c6cb;"></div>
                 <div class="navigation-buttons">
                     <a href="html-module5.html" class="prev-btn"><i class="fas fa-arrow-left"></i> Back to Module 5</a>
-                    <a href="html-module7.html" class="next-btn">Next Module <i class="fas fa-arrow-right"></i></a>
+                    <a href="html-module7.html" class="next-btn" style="display: none;">Next Module <i class="fas fa-arrow-right"></i></a>
                 </div>
             </section>
-            <button class="home-button"><a href="index.html">Back to Home</a></button>
+            <button class="home-button" style="position: fixed; top: 10px; left: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;"><a href="index.html" style="color: white; text-decoration: none;">Back to Home</a></button>
         </main>
     </div>
     <script src="../js/modules.js"></script>
+    <script>
+        document.querySelector('.run-button').addEventListener('click', function() {
+            const userInput = document.querySelector('.code-editor').innerText;
+            const correctAnswer = '&lt;form&gt;\n    &lt;input type="text" placeholder="Your Feedback"&gt;\n    &lt;input type="submit" value="Submit"&gt;\n&lt;/form&gt;';
+            const completionMessage = document.querySelector('.completion-message');
+            const errorMessage = document.querySelector('.error-message');
+            const nextButton = document.querySelector('.next-btn');
+
+            if (userInput.trim() === correctAnswer) {
+                completionMessage.innerText = '✔️ Correct! Your feedback form is set up properly.';
+                errorMessage.style.display = 'none';
+                nextButton.style.display = 'inline';
+            } else {
+                errorMessage.innerText = '❌ Error: Please ensure your form is correctly formatted.';
+                errorMessage.style.display = 'block';
+                completionMessage.style.display = 'none';
+                nextButton.style.display = 'none';
+            }
+        });
+        document.querySelector('.hint-button').addEventListener('click', function() {
+            const hintContent = 'Use the &lt;form&gt; tag to create forms and ensure you have input elements!';
+            document.querySelector('.hint-content').innerHTML = hintContent;
+            document.querySelector('.hint-content').style.display = 'block';
+        });
+    </script>
 </body>
 </html>

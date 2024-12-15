@@ -26,7 +26,16 @@
         </aside>
         <main class="course-content">
             <h1>Module 3: Text & Links</h1>
-            <p>Learn how to format text and create links in HTML.</p>
+            <h2>Understanding Text and Links</h2>
+            <p>In this module, we will explore how to use text and links in HTML, specifically focusing on Mount Eloumdem, a beautiful mountain known for its stunning views.</p>
+            <img src="path/to/mount-eloumdem.jpg" alt="Mount Eloumdem" style="width:100%; height:auto;">
+            <p>For example, you can create a link to a webpage that provides more information about Mount Eloumdem using the following syntax:</p>
+            <pre>&lt;a href="https://www.example.com/mount-eloumdem"&gt;Learn more about Mount Eloumdem&lt;/a&gt;</pre>
+            <p>In this case, replace <code>https://www.example.com/mount-eloumdem</code> with the actual URL you want to link to, and <code>Learn more about Mount Eloumdem</code> with the text that will be clickable.</p>
+            <h3>Exercise</h3>
+            <p>Your task is to create a link to the next module, using the following text:</p>
+            <pre>&lt;a href="html-module4.html"&gt;Next Module&lt;/a&gt;</pre>
+            <p>Ensure that your link is correctly formatted and includes the correct URL.</p>
             <div class="code-editor" contenteditable="true">
                 <pre>&lt;p&gt;Visit &lt;a href="https://www.example.com"&gt;Example&lt;/a&gt; for more information.&lt;/p&gt;</pre>
             </div>
@@ -38,12 +47,7 @@
                         <h3>Need Help?</h3>
                         <p>Click below for hints on this exercise.</p>
                         <button class="hint-button">Show Hint</button>
-                        <div class="hint-content">
-                            <ul>
-                                <li>Use &lt;a&gt; tags to create hyperlinks.</li>
-                                <li>Ensure you have a valid href attribute.</li>
-                            </ul>
-                        </div>
+                        <div class="hint-content" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -52,14 +56,40 @@
                     <h2>🎉 Congratulations!</h2>
                     <p>You've completed Module 3 and learned about text and links. Ready to move on to Module 4?</p>
                 </div>
+                <div class="error-message" style="display:none; color:red; background-color: #f8d7da; padding: 10px; border-radius: 5px; border: 1px solid #f5c6cb;"></div>
                 <div class="navigation-buttons">
                     <a href="html-module2.html" class="prev-btn"><i class="fas fa-arrow-left"></i> Back to Module 2</a>
-                    <a href="html-module4.html" class="next-btn">Next Module <i class="fas fa-arrow-right"></i></a>
+                    <a href="html-module4.html" class="next-btn" style="display: none;">Next Module <i class="fas fa-arrow-right"></i></a>
                 </div>
             </section>
-            <button class="home-button"><a href="index.html">Back to Home</a></button>
         </main>
     </div>
+    <button class="home-button" style="position: fixed; top: 10px; left: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;"><a href="index.html" style="color: white; text-decoration: none;">Back to Home</a></button>
     <script src="../js/modules.js"></script>
+    <script>
+        document.querySelector('.run-button').addEventListener('click', function() {
+            const userInput = document.querySelector('.code-editor').innerText;
+            const correctAnswer = '&lt;a href="html-module4.html"&gt;Next Module&lt;/a&gt;';
+            const completionMessage = document.querySelector('.completion-message');
+            const errorMessage = document.querySelector('.error-message');
+            const nextButton = document.querySelector('.next-btn');
+
+            if (userInput.trim() === correctAnswer) {
+                completionMessage.innerText = '✔️ Correct! You have created the right link.';
+                errorMessage.style.display = 'none';
+                nextButton.style.display = 'inline';
+            } else {
+                errorMessage.innerText = '❌ Error: Please ensure your link is correctly formatted.';
+                errorMessage.style.display = 'block';
+                completionMessage.style.display = 'none';
+                nextButton.style.display = 'none';
+            }
+        });
+        document.querySelector('.hint-button').addEventListener('click', function() {
+            const hintContent = 'Remember to use the correct syntax for links!';
+            document.querySelector('.hint-content').innerHTML = hintContent;
+            document.querySelector('.hint-content').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
