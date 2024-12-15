@@ -62,7 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const validationResult = validateExercise(doc);
 
             if (validationResult.isValid) {
-                showSuccess();
+                // Updated logic to display the Congratulations message only when all tests pass
+                if (validationResult.errors.length === 0) {
+                    showSuccess();
+                } else {
+                    showDetailedError(validationResult.errors);
+                }
             } else {
                 showDetailedError(validationResult.errors);
             }
@@ -199,41 +204,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Booking System
-document.addEventListener('DOMContentLoaded', function() {
-    const bookingButtons = document.querySelectorAll('.booking-button');
+// Consolidated booking button logic
+const bookingButtons = document.querySelectorAll('.booking-button');
+
+bookingButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Show modal for booking
+        const modal = document.querySelector('.modal');
+        if (modal) modal.style.display = 'block';
+    });
+});
+
+// Close modal functionality
+const closeModal = document.querySelector('.close-modal');
+if (closeModal) {
+    closeModal.addEventListener('click', () => {
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'none';
+    });
+}
+
+window.addEventListener('click', (e) => {
     const modal = document.querySelector('.modal');
-    const closeModal = document.querySelector('.close-modal');
-    const bookingForm = document.querySelector('.booking-form');
-
-    bookingButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            if (modal) modal.style.display = 'block';
-        });
-    });
-
-    if (closeModal) {
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-    }
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Here you would typically handle the form submission
-            // For now, just hide the modal
-            modal.style.display = 'none';
-            alert('Thank you for booking a session! We will contact you soon.');
-        });
+    if (e.target === modal) {
+        modal.style.display = 'none';
     }
 });
+
+// Booking form submission
+const bookingForm = document.querySelector('.booking-form');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'none';
+        alert('Thank you for booking a session! We will contact you soon.');
+    });
+}
 
 // Internet game functionality
 document.addEventListener('DOMContentLoaded', () => {
